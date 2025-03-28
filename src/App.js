@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, Outlet, useLocation } from 'react-router-dom';
 import { lazy, Suspense } from 'react';
 import { AnimatePresence } from 'framer-motion';
 
@@ -17,14 +17,19 @@ const LoadingSpinner = () => (
 function App() {
   const location = useLocation();
   
+  // Determine which component to render based on path
+  const getCurrentComponent = () => {
+    const path = location.pathname;
+    
+    if (path === "/notes") return <Notes />;
+    if (path === "/thoughts") return <Thoughts />;
+    return <Portfolio />;
+  };
+  
   return (
     <AnimatePresence mode="wait">
       <Suspense fallback={<LoadingSpinner />}>
-        <Routes location={location} key={location.pathname}>
-          <Route path="/" element={<Portfolio />} />
-          <Route path="/notes" element={<Notes />} />
-          <Route path="/thoughts" element={<Thoughts />} />
-        </Routes>
+        {getCurrentComponent()}
       </Suspense>
     </AnimatePresence>
   );

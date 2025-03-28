@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import logoImage from './assets/images/logo.png'; // Import the logo image
+import logoImage from './assets/images/Portfolio Logo.png'; // Import the logo image
 
 export default function Thoughts() {
   return (

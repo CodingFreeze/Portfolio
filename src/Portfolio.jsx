@@ -9,6 +9,10 @@ import { Link } from 'react-router-dom';
 import './mobileStyles.css';
 import logoImage from './assets/images/Portfolio Logo.png'; // Import the logo image
 
+// Lazy load non-critical components for better performance
+const ParticleEffect = lazy(() => import('./components/ParticleEffect'));
+const GalaxyBackground = lazy(() => import('./components/GalaxyBackground'));
+
 const TiltCard = ({ children, className }) => {
   const [tiltValues, setTiltValues] = useState({ x: 0, y: 0 });
   const cardRef = useRef(null);
@@ -34,7 +38,7 @@ const TiltCard = ({ children, className }) => {
   return (
     <motion.div
       ref={cardRef}
-      className={`relative ${className}`}
+      className={`relative ${className || ''}`}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       style={{
@@ -77,34 +81,7 @@ export default function Portfolio() {
     }));
   }, []);
   
-  // Generate background galaxies
-  const galaxies = useMemo(() => {
-    return Array.from({ length: 5 }).map(() => ({  // Reduced from 8 to 5 galaxies
-      left: Math.random() * 100,
-      top: Math.random() * 100,
-      size: Math.random() * 60 + 40,
-      rotation: Math.random() * 360,
-      delay: Math.random() * 4,
-      // Random colors for galaxies (purples, blues, pinks for dark mode, pastels for light mode)
-      color: darkMode ? [
-        `rgba(${50 + Math.random() * 100}, ${20 + Math.random() * 50}, ${100 + Math.random() * 155}, 0.06)`,
-        `rgba(${20 + Math.random() * 50}, ${50 + Math.random() * 100}, ${150 + Math.random() * 105}, 0.06)`,
-        `rgba(${100 + Math.random() * 155}, ${20 + Math.random() * 50}, ${100 + Math.random() * 155}, 0.06)`
-      ] : [
-        `rgba(${180 + Math.random() * 50}, ${200 + Math.random() * 30}, ${220 + Math.random() * 30}, 0.04)`,
-        `rgba(${200 + Math.random() * 40}, ${220 + Math.random() * 20}, ${230 + Math.random() * 20}, 0.04)`,
-        `rgba(${210 + Math.random() * 30}, ${210 + Math.random() * 30}, ${230 + Math.random() * 20}, 0.04)`
-      ],
-      animationDuration: 20 + Math.random() * 60,
-      spiralArms: Array.from({ length: 3 + Math.floor(Math.random() * 2) }).map((_, i) => ({  // Reduced from 3-6 to 3-5 arms
-        rotation: (i * (360 / (3 + Math.floor(Math.random() * 2)))) + (Math.random() * 30 - 15),
-        width: 60 + Math.random() * 70,
-        height: 1 + Math.random() * 4,
-        opacity: darkMode ? (0.12 + Math.random() * 0.2) : (0.08 + Math.random() * 0.12),
-        curve: 0.4 + Math.random() * 0.8
-      }))
-    }));
-  }, [darkMode]);  // Added darkMode dependency to update colors when theme changes
+  // We've moved the galaxy background to a separate component for optimization
   
   // Loading animation effect
   useEffect(() => {
@@ -270,7 +247,8 @@ export default function Portfolio() {
   // Enhanced scroll progress tracking for smoother animation
   const { scrollYProgress } = useScroll({
     offset: ["start start", "end end"],
-    smooth: 0.1  // Reduced from 0.5 for better performance
+    smooth: 0.1,  // Reduced from 0.5 for better performance
+    layoutEffect: false
   });
   
   const portfolioRef = useRef(null);
@@ -281,7 +259,8 @@ export default function Portfolio() {
   const { scrollYProgress: sectionScrollProgress } = useScroll({
     target: scrollRef,
     offset: ["start end", "end start"],
-    smooth: 0.1  // Reduced from 0.5 for better performance
+    smooth: 0.1,  // Reduced from 0.5 for better performance
+    layoutEffect: false
   });
   
   const sectionOpacity = useTransform(
@@ -851,158 +830,13 @@ export default function Portfolio() {
             transition={{ duration: 1, delay: star.delay }}
           />
         ))}
-
-        {/* Galaxy/Nebula Background Elements */}
-        {galaxies.map((galaxy, index) => (
-          <motion.div
-            key={`galaxy-${index}`}
-            className="absolute rounded-full overflow-hidden will-change-transform"
-            style={{
-              left: `${galaxy.left}%`,
-              top: `${galaxy.top}%`,
-              width: `${galaxy.size}px`,
-              height: `${galaxy.size}px`,
-              transform: `rotate(${galaxy.rotation}deg) translateZ(0)`,  // Force GPU acceleration
-              zIndex: 5,
-              pointerEvents: "none"
-            }}
-            initial={{ opacity: 0, scale: 0.5 }}
-                    animate={{
-              opacity: [0.4, 0.7, 0.4],
-              scale: [0.8, 1, 0.8],
-              rotate: [`${galaxy.rotation}deg`, `${galaxy.rotation + 360}deg`]
-                    }}
-                    transition={{
-              duration: galaxy.animationDuration,
-                      repeat: Infinity,
-              ease: "linear",
-              delay: galaxy.delay
-            }}
-          >
-            {/* Multiple gradient layers create nebula effect */}
-            {galaxy.color.map((color, colorIndex) => (
-              <motion.div
-                key={`galaxy-${index}-layer-${colorIndex}`}
-                className="absolute inset-0 rounded-full"
-                style={{
-                  background: `radial-gradient(circle, ${color} 0%, transparent 70%)`,
-                  mixBlendMode: darkMode ? "screen" : "multiply",
-                  transform: `rotate(${colorIndex * 45}deg)`,
-                }}
-                animate={{
-                  scale: [1, 1.2, 1],
-                  rotate: [`${colorIndex * 45}deg`, `${colorIndex * 45 + 180}deg`, `${colorIndex * 45 + 360}deg`],
-                }}
-                transition={{
-                  duration: galaxy.animationDuration / 2,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: colorIndex * 2
-                }}
-              />
-            ))}
-            
-            {/* Galaxy core - bright center */}
-                  <motion.div
-              className="absolute rounded-full"
-                    style={{
-                width: '20%',
-                height: '20%',
-                background: `radial-gradient(circle, ${galaxy.color[0].replace('0.1', '0.3')} 0%, transparent 100%)`,
-                left: '50%',
-                top: '50%',
-                transform: 'translate(-50%, -50%)',
-                filter: 'blur(2px)',
-                mixBlendMode: darkMode ? "screen" : "soft-light",
-                    }}
-                    animate={{
-                scale: [1, 1.3, 1],
-                opacity: [0.7, 0.9, 0.7],
-                    }}
-                    transition={{
-                duration: galaxy.animationDuration / 3,
-                repeat: Infinity,
-                ease: "easeInOut",
-              }}
-            />
-            
-            {/* Spiral arms for galaxy effect */}
-            {galaxy.spiralArms.map((arm, armIndex) => (
-              <motion.div
-                key={`galaxy-${index}-arm-${armIndex}`}
-                className="absolute"
-                style={{
-                  width: `${arm.width}%`,
-                  height: `${arm.height}px`,
-                  background: `linear-gradient(90deg, transparent, ${galaxy.color[armIndex % galaxy.color.length].replace('0.1', arm.opacity)}, transparent)`,
-                  left: '50%',
-                  top: '50%',
-                  transformOrigin: 'left center',
-                  transform: `translate(-50%, -50%) rotate(${arm.rotation}deg) scaleX(${1 + arm.curve}) ${arm.curve > 0.7 ? 'skewY(5deg)' : ''}`,
-                  borderRadius: '100%',
-                  filter: 'blur(1.5px)'
-                }}
-                animate={{
-                  rotate: [`${arm.rotation}deg`, `${arm.rotation + 360}deg`],
-                  width: [`${arm.width}%`, `${arm.width * (0.8 + arm.curve * 0.2)}%`, `${arm.width}%`],
-                  scaleX: [1 + arm.curve, 1 + arm.curve * 1.2, 1 + arm.curve],
-                  skewY: arm.curve > 0.7 ? ['3deg', '7deg', '3deg'] : ['0deg', '0deg', '0deg']
-                }}
-                transition={{
-                  duration: galaxy.animationDuration * (0.7 + arm.curve * 0.3),
-                      repeat: Infinity,
-                      ease: "easeInOut"
-                    }}
-                  />
-            ))}
-                </motion.div>
-        ))}
-                
-        {/* Add dust particles for additional flowing effect */}
-        {galaxies.map((galaxy, index) => (
-          [...Array(5)].map((_, i) => (
-                <motion.div
-              key={`dust-${index}-${i}`}
-              className="absolute rounded-full"
-                  style={{
-                width: `${2 + Math.random() * 3}px`,
-                height: `${2 + Math.random() * 3}px`,
-                backgroundColor: darkMode 
-                  ? galaxy.color[i % galaxy.color.length].replace('0.1', '0.25')
-                  : `rgba(${180 + Math.random() * 50}, ${200 + Math.random() * 30}, ${220 + Math.random() * 30}, 0.15)`,
-                filter: 'blur(1px)',
-                left: `${galaxy.left + (Math.random() * galaxy.size / 2) - galaxy.size / 4}%`,
-                top: `${galaxy.top + (Math.random() * galaxy.size / 2) - galaxy.size / 4}%`,
-                boxShadow: darkMode 
-                  ? `0 0 2px 1px ${galaxy.color[i % galaxy.color.length].replace('0.1', '0.15')}`
-                  : `0 0 2px 1px rgba(180, 200, 220, 0.1)`,
-                zIndex: 4
-                  }}
-                  animate={{
-                x: [
-                  Math.random() * 30 - 15, 
-                  Math.random() * 60 - 30, 
-                  Math.random() * 30 - 15
-                ],
-                y: [
-                  Math.random() * 30 - 15, 
-                  Math.random() * 60 - 30, 
-                  Math.random() * 30 - 15
-                ],
-                opacity: darkMode ? [0.4, 0.7, 0.4] : [0.2, 0.4, 0.2],
-                scale: [1, 1.3, 1]
-                  }}
-                  transition={{
-                duration: galaxy.animationDuration * 0.6,
-                    repeat: Infinity,
-                ease: "easeInOut",
-                delay: i * 0.5 + Math.random() * 2
-                  }}
-                />
-          ))
-        ))}
       </div>
-                
+
+      {/* Optimized GalaxyBackground component loaded lazily */}
+      <Suspense fallback={<div className="fixed inset-0 z-0"></div>}>
+        <GalaxyBackground darkMode={darkMode} />
+      </Suspense>
+
       {isAnimating && (
                 <motion.div
           className="fixed inset-0 z-40 pointer-events-none"
@@ -1790,30 +1624,9 @@ export default function Portfolio() {
           </motion.svg>
           
           {/* Floating particles */}
-          <div className="absolute inset-0 pointer-events-none">
-            {[...Array(6)].map((_, i) => (  // Reduced from 12 to 6 particles
-              <motion.div
-                key={i}
-                className="absolute w-1.5 h-1.5 rounded-full bg-[var(--accent)] will-change-transform"
-                initial={{ 
-                  x: Math.random() * 1200, 
-                  y: Math.random() * 120,
-                  opacity: 0.2 + Math.random() * 0.3,
-                  transform: "translateZ(0)"  // Force GPU acceleration
-                }}
-                animate={{
-                  y: [Math.random() * 120, Math.random() * 120 - 40, Math.random() * 120],
-                  opacity: [0.2, 0.6, 0.2],
-                  scale: [1, 1.5, 1]
-                }}
-                transition={{
-                  duration: 3 + Math.random() * 3,
-                  repeat: Infinity,
-                  repeatType: "reverse"
-                }}
-              />
-            ))}
-          </div>
+          <Suspense fallback={null}>
+            <ParticleEffect className="inset-0" />
+          </Suspense>
         </div>
 
         <motion.section 
@@ -3305,42 +3118,5 @@ export default function Portfolio() {
     </motion.div>
   );
 }
-// Fix ParticleEffect component - restore it in case it's needed elsewhere
-const ParticleEffect = ({ className }) => {
-  const [darkMode] = useState(true); // Just for initial render; will be overridden by context
-  
-  return (
-    <div className={`absolute pointer-events-none ${className}`}>
-      {[...Array(6)].map((_, i) => (  // Reduced from 10 to 6 particles
-        <motion.div
-          key={i}
-          className="absolute w-1.5 h-1.5 rounded-full will-change-transform"
-          initial={{ 
-            opacity: 0, 
-            scale: 0,
-            transform: "translateZ(0)"  // Force GPU acceleration
-          }}
-          animate={{ 
-            opacity: [0, 1, 0],
-            scale: [0, 1.8, 0],
-            x: Math.random() * 40 - 20, // Reduced range from 60 to 40
-            y: Math.random() * 40 - 20, // Reduced range from 60 to 40
-          }}
-          transition={{
-            duration: 0.8,
-            delay: i * 0.1, // Increased from 0.05 to 0.1
-            repeat: Infinity,
-            repeatDelay: 2 // Increased from 1.5 to 2
-          }}
-          style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-            backgroundColor: 'var(--accent)',
-            boxShadow: '0 0 5px var(--accent)'
-          }}
-        />
-      ))}
-    </div>
-  );
-};
+// ParticleEffect is now imported lazily from a separate file
 

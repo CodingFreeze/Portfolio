@@ -4,13 +4,18 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
     
-    <title>Abdullah | Portfolio</title>
+    <title>Abdullah Rana | CS + Math</title>
     
     <!-- Favicon -->
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     
     <!-- Apple Touch Icon -->
     <link rel="apple-touch-icon" href="%PUBLIC_URL%/apple-touch-icon.png" />
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="%PUBLIC_URL%/assets/images/Portfolio Logo.png" as="image" />
+    <link rel="preload" href="%PUBLIC_URL%/build/static/js/main.chunk.js" as="script" />
+    <link rel="preload" href="%PUBLIC_URL%/build/static/js/vendors.chunk.js" as="script" />
     
     <!-- Web App Manifest -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
@@ -19,27 +24,37 @@
     <meta name="theme-color" content="#000000" />
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Abdullah Rana - Portfolio Website" />
-    <meta name="keywords" content="software engineering, portfolio, web development, UVA, computer science, programming" />
-    <meta name="author" content="Abdullah" />
+    <meta name="description" content="Computer Science & Mathematics student at UVA. Explore my projects, experience, skills, and download my resume." />
+    <meta name="keywords" content="Abdullah Rana, software engineering, portfolio, web development, UVA, computer science, mathematics, programming, CS, project showcase" />
+    <meta name="author" content="Abdullah Rana" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://www.abdullahrana.com" />
     
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://abdullah-portfolio.com/" />
-    <meta property="og:title" content="Abdullah's Portfolio" />
-    <meta property="og:description" content="Abdullah's Portfolio - CS + Math Student at UVA" />
-    <meta property="og:image" content="%PUBLIC_URL%/web-app-manifest-192x192.png" />
+    <meta property="og:url" content="https://www.abdullahrana.com/" />
+    <meta property="og:title" content="Abdullah Rana | Computer Science & Mathematics Portfolio" />
+    <meta property="og:description" content="Computer Science & Mathematics student at UVA. Explore my projects, experience, and resume." />
+    <meta property="og:image" content="%PUBLIC_URL%/web-app-manifest-512x512.png" />
+    <meta property="og:image:alt" content="Abdullah Rana Portfolio" />
+    <meta property="og:site_name" content="Abdullah Rana Portfolio" />
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://abdullah-portfolio.com/" />
-    <meta property="twitter:title" content="Abdullah's Portfolio" />
-    <meta property="twitter:description" content="Abdullah's Portfolio - CS + Math Student at UVA" />
-    <meta property="twitter:image" content="%PUBLIC_URL%/web-app-manifest-192x192.png" />
+    <meta property="twitter:url" content="https://www.abdullahrana.com/" />
+    <meta property="twitter:title" content="Abdullah Rana | CS + Math Portfolio" />
+    <meta property="twitter:description" content="Computer Science & Mathematics student at UVA. Explore my projects, experience, and resume." />
+    <meta property="twitter:image" content="%PUBLIC_URL%/web-app-manifest-512x512.png" />
     
     <!-- Preconnect to external resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Mobile meta -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Abdullah Rana" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
     
     <style>
       /* Mobile specific styles */
@@ -104,7 +119,13 @@
     </style>
   </head>
   <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <noscript>
+      <div style="text-align: center; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif; padding: 30px;">
+        <h1>Abdullah Rana</h1>
+        <p>CS + Math student at UVA | <a href="%PUBLIC_URL%/resume.pdf" style="color: #007BFF;">Resume</a> | <a href="mailto:abdullahrana@virginia.edu" style="color: #007BFF;">Contact</a></p>
+        <p>Please enable JavaScript to view the full interactive portfolio.</p>
+      </div>
+    </noscript>
     <div id="root"></div>
   </body>
 </html>
