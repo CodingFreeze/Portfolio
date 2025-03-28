@@ -7,6 +7,7 @@ import { FaGithub, FaLinkedin, FaEnvelope, FaPython, FaReact, FaNodeJs, FaDataba
 import { SiTypescript, SiTailwindcss } from 'react-icons/si';
 import { Link } from 'react-router-dom';
 import './mobileStyles.css';
+import logoImage from './assets/images/Portfolio Logo.png'; // Add this import for the logo
 
 const TiltCard = ({ children, className }) => {
   const [tiltValues, setTiltValues] = useState({ x: 0, y: 0 });
@@ -1076,7 +1077,11 @@ export default function Portfolio() {
           className="absolute left-1/2 -translate-x-1/2 text-xl sm:text-2xl font-bold text-[#68A1B1] hover:scale-110 transition-transform duration-300 cursor-pointer z-50"
           aria-label="Abdullah Rana logo"
         >
-          [AR]
+          <img 
+            src={logoImage} 
+            alt="Abdullah Rana Logo" 
+            className="w-12 h-12 sm:w-14 sm:h-14 rounded-full"
+          />
         </div>
 
         {/* Desktop Right Navigation - Hidden on mobile */}
@@ -1137,6 +1142,14 @@ export default function Portfolio() {
               transition={{ duration: 0.3 }}
             >
               <div className="flex flex-col items-center gap-6 text-xl">
+                {/* Mobile logo at the top of menu */}
+                <div className="mb-6">
+                  <img 
+                    src={logoImage} 
+                    alt="Abdullah Rana Logo" 
+                    className="w-16 h-16 rounded-full"
+                  />
+                </div>
                 <a 
                   href="#about" 
                   className="hover:text-[var(--link-hover)] transition-all duration-300 hover:scale-105"

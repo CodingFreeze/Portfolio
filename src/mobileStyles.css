@@ -65,26 +65,29 @@
 /* Specific fixes for project section buttons */
 @media (max-width: 640px) {
   .project-buttons {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
+    display: inline-flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: auto;
     margin-bottom: 1rem;
   }
   
   .project-buttons > * {
-    width: 100%;
-    margin-bottom: 0.5rem;
+    width: auto;
+    margin-bottom: 0;
   }
   
   .project-tech-stack {
     justify-content: flex-start;
     flex-wrap: wrap;
     gap: 0.5rem;
+    margin-top: 0.75rem;
   }
   
   /* Fix button alignment */
   .project-buttons a {
     justify-content: center;
+    flex: 0 0 auto;
   }
   
   /* Ensure icons are visible */

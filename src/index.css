@@ -142,3 +142,15 @@ code {
     margin-top: 0.75rem;
   }
 }
+
+/* Logo styling */
+img[alt="Abdullah Rana Logo"] {
+  border: 2px solid var(--accent);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 10px rgba(var(--accent-rgb), 0.2);
+}
+
+img[alt="Abdullah Rana Logo"]:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(var(--accent-rgb), 0.4);
+}
