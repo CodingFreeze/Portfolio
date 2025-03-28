@@ -122,6 +122,7 @@ code {
     display: inline-flex !important;
     flex-direction: row !important;
     width: auto !important;
+    justify-content: center !important;
   }
   
   /* Make buttons more compact on very small screens */
@@ -133,6 +134,13 @@ code {
     .project-buttons .px-3 {
       padding-left: 0.5rem !important;
       padding-right: 0.5rem !important;
+    }
+    
+    /* Ensure tech stack is centered properly */
+    .project-tech-stack {
+      justify-content: center !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
     }
   }
   
@@ -203,6 +211,24 @@ code {
   #passions .h-12 {
     width: 2rem !important;
     height: 2rem !important;
+  }
+  
+  /* Center project highlights on mobile */
+  #projects .grid-cols-1 {
+    margin: 0 auto;
+  }
+  
+  #projects h3, 
+  #projects h4 {
+    text-align: center;
+  }
+  
+  #projects .sm\:text-start {
+    text-align: center !important;
+  }
+  
+  #projects .bg-\[var\(--bg\)\] {
+    margin-bottom: 1rem;
   }
   
   /* Adjust text sizes for skill boxes on very small screens */

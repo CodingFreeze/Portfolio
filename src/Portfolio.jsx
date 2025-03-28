@@ -1574,9 +1574,9 @@ export default function Portfolio() {
                       </div>
                       
                       {/* Bottom section with improved responsive layout */}
-                      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 mt-auto w-full">
+                      <div className="flex flex-col sm:flex-row justify-between items-center sm:items-end gap-4 mt-auto w-full">
                         {/* Left: GitHub and Live Demo buttons side by side */}
-                        <div className="inline-flex flex-nowrap gap-2 w-auto project-buttons">
+                        <div className="inline-flex flex-nowrap gap-2 w-auto project-buttons mx-auto sm:mx-0">
                           <Button 
                             className="flex items-center gap-2 bg-transparent hover:bg-[var(--accent)] hover:text-white transition-colors text-xs sm:text-sm px-3 sm:px-4 py-1 sm:py-2 border border-[var(--accent)] text-[var(--accent)] min-h-[36px] rounded-r-none"
                             asChild
@@ -1598,7 +1598,7 @@ export default function Portfolio() {
                         </div>
                         
                         {/* Right: Tech stack boxes with enhanced styling */}
-                        <div className="flex flex-wrap gap-1 sm:gap-2 justify-start sm:justify-end w-full sm:w-auto project-tech-stack">
+                        <div className="flex flex-wrap gap-1 sm:gap-2 justify-center sm:justify-end w-full sm:w-auto project-tech-stack">
                           {project.techStack && project.techStack.map((tech, idx) => (
                             <span 
                               key={idx} 
@@ -1628,7 +1628,7 @@ export default function Portfolio() {
             <div className="absolute inset-0 bg-gradient-to-br from-[var(--accent)] via-blue-500 to-transparent opacity-5 z-0"></div>
             
             <div className="relative z-10">
-              <div className="flex items-center gap-3 mb-4">
+              <div className="flex items-center gap-3 mb-4 justify-center sm:justify-start">
                 <div className="w-10 h-10 flex items-center justify-center rounded-full bg-[var(--accent)]">
                   <FaCode className="w-6 h-6 text-white" />
                 </div>
@@ -1706,7 +1706,7 @@ export default function Portfolio() {
                 </div>
               </div>
               
-              <div className="flex flex-wrap gap-3">
+              <div className="flex flex-wrap gap-3 justify-center sm:justify-start">
                 <motion.a 
                   href="https://github.com/CodingFreeze" 
                   target="_blank" 

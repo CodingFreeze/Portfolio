@@ -70,6 +70,8 @@
     flex-wrap: nowrap;
     width: auto;
     margin-bottom: 1rem;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .project-buttons > * {
@@ -78,21 +80,55 @@
   }
   
   .project-tech-stack {
-    justify-content: flex-start;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 0.5rem;
     margin-top: 0.75rem;
+    width: 100%;
+    text-align: center;
   }
   
   /* Fix button alignment */
   .project-buttons a {
     justify-content: center;
     flex: 0 0 auto;
+    min-width: 80px;
   }
   
-  /* Ensure icons are visible */
+  /* Ensure icons are visible and centered */
   .project-buttons svg {
     flex-shrink: 0;
     margin-right: 0.5rem;
+  }
+  
+  /* Center project tech stack items */
+  .project-tech-stack span {
+    display: inline-flex;
+    justify-content: center;
+  }
+  
+  /* Project highlights mobile styling */
+  #projects ul.space-y-2 {
+    margin: 0 auto;
+    max-width: 90%;
+  }
+  
+  #projects ul.space-y-2 li {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  #projects ul.space-y-2 li span {
+    text-align: left;
+  }
+  
+  #projects .flex.justify-between {
+    justify-content: center;
+  }
+  
+  #projects h4.font-medium {
+    width: 100%;
+    text-align: center;
   }
 } 
