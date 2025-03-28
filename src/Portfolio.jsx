@@ -1542,10 +1542,10 @@ export default function Portfolio() {
                       
                       {/* Bottom section with improved responsive layout */}
                       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 mt-auto w-full">
-                        {/* Left: GitHub and Live Demo buttons with improved mobile styling */}
-                        <div className="flex flex-wrap gap-2 w-full sm:w-auto project-buttons">
+                        {/* Left: GitHub and Live Demo buttons side by side */}
+                        <div className="inline-flex flex-nowrap gap-2 w-auto project-buttons">
                           <Button 
-                            className="flex items-center gap-2 bg-transparent hover:bg-[var(--accent)] hover:text-white transition-colors text-xs sm:text-sm px-3 sm:px-4 py-1 sm:py-2 border border-[var(--accent)] text-[var(--accent)] min-h-[36px]"
+                            className="flex items-center gap-2 bg-transparent hover:bg-[var(--accent)] hover:text-white transition-colors text-xs sm:text-sm px-3 sm:px-4 py-1 sm:py-2 border border-[var(--accent)] text-[var(--accent)] min-h-[36px] rounded-r-none"
                             asChild
                           >
                             <a href={project.github} target="_blank" rel="noopener noreferrer" className="whitespace-nowrap">
@@ -1554,7 +1554,7 @@ export default function Portfolio() {
                             </a>
                           </Button>
                           <Button 
-                            className="flex items-center gap-2 bg-[var(--accent)] hover:opacity-90 transition-opacity px-3 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm text-white min-h-[36px]"
+                            className="flex items-center gap-2 bg-[var(--accent)] hover:opacity-90 transition-opacity px-3 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm text-white min-h-[36px] rounded-l-none border-l-0"
                             asChild
                           >
                             <a href={project.demo} target="_blank" rel="noopener noreferrer" className="whitespace-nowrap">

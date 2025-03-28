@@ -117,19 +117,28 @@ code {
     gap: 0.75rem !important;
   }
   
-  /* Make buttons full width on mobile */
-  .w-full.sm\:w-auto {
-    width: 100% !important;
+  /* Keep buttons side by side but adjust sizing */
+  .project-buttons {
+    display: inline-flex !important;
+    flex-direction: row !important;
+    width: auto !important;
   }
   
-  /* Fix specific buttons */
-  .flex.flex-wrap.gap-2 {
-    width: 100% !important;
-    margin-bottom: 0.75rem;
+  /* Make buttons more compact on very small screens */
+  @media (max-width: 380px) {
+    .project-buttons a span {
+      font-size: 0.7rem;
+    }
+    
+    .project-buttons .px-3 {
+      padding-left: 0.5rem !important;
+      padding-right: 0.5rem !important;
+    }
   }
   
-  /* Fix tech stack wrap */
-  .justify-start.sm\:justify-end {
-    justify-content: flex-start !important;
+  /* Make tech stack full width */
+  .project-tech-stack {
+    width: 100% !important;
+    margin-top: 0.75rem;
   }
 }
