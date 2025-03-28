@@ -162,6 +162,49 @@ code {
     min-height: 70px !important;
   }
   
+  /* Mobile styling for coursework and passions sections */
+  #coursework .flex, 
+  #passions .flex {
+    flex-wrap: wrap !important;
+  }
+  
+  #coursework h4, 
+  #passions h4 {
+    font-size: 1rem !important;
+    line-height: 1.25rem !important;
+  }
+  
+  #coursework p, 
+  #passions p {
+    font-size: 0.75rem !important;
+  }
+  
+  #coursework .h-\[160px\],
+  #passions .p-5 {
+    padding: 0.75rem !important;
+  }
+  
+  #coursework .h-\[160px\] {
+    height: auto !important;
+    min-height: 140px !important;
+  }
+  
+  #coursework .bg-\[var\(--secondary\)\],
+  #passions .bg-\[var\(--secondary\)\] {
+    margin-bottom: 0.5rem !important;
+  }
+  
+  /* Optimize passion section icons for mobile */
+  #passions .h-20 {
+    height: 60px !important;
+  }
+  
+  #passions .w-12,
+  #passions .h-12 {
+    width: 2rem !important;
+    height: 2rem !important;
+  }
+  
   /* Adjust text sizes for skill boxes on very small screens */
   @media (max-width: 380px) {
     #skills h3 {

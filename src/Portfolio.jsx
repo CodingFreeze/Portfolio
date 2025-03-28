@@ -2464,30 +2464,30 @@ export default function Portfolio() {
           
           {/* Tab Navigation */}
           <div className="mb-8">
-            <div className="flex space-x-2 border-b border-[var(--divider)] pb-2">
+            <div className="flex flex-wrap space-x-0 space-y-2 sm:space-y-0 sm:space-x-2 border-b border-[var(--divider)] pb-2">
               <button 
-                className={`px-4 py-2 font-medium rounded-t-lg flex items-center gap-2 ${activeCourseTab === 'completed' ? 'bg-[var(--secondary)] text-[var(--accent)]' : 'text-[var(--muted)] hover:text-[var(--text)]'}`}
+                className={`px-3 sm:px-4 py-2 font-medium rounded-t-lg flex items-center gap-1 sm:gap-2 text-sm sm:text-base ${activeCourseTab === 'completed' ? 'bg-[var(--secondary)] text-[var(--accent)]' : 'text-[var(--muted)] hover:text-[var(--text)]'}`}
                 onClick={() => setActiveCourseTab('completed')}
               >
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                 </svg>
                 <span>Completed</span>
               </button>
               <button 
-                className={`px-4 py-2 font-medium rounded-t-lg flex items-center gap-2 ${activeCourseTab === 'current' ? 'bg-[var(--secondary)] text-[var(--accent)]' : 'text-[var(--muted)] hover:text-[var(--text)]'}`}
+                className={`px-3 sm:px-4 py-2 font-medium rounded-t-lg flex items-center gap-1 sm:gap-2 text-sm sm:text-base ${activeCourseTab === 'current' ? 'bg-[var(--secondary)] text-[var(--accent)]' : 'text-[var(--muted)] hover:text-[var(--text)]'}`}
                 onClick={() => setActiveCourseTab('current')}
               >
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
                 <span>Current</span>
               </button>
               <button 
-                className={`px-4 py-2 font-medium rounded-t-lg flex items-center gap-2 ${activeCourseTab === 'upcoming' ? 'bg-[var(--secondary)] text-[var(--accent)]' : 'text-[var(--muted)] hover:text-[var(--text)]'}`}
+                className={`px-3 sm:px-4 py-2 font-medium rounded-t-lg flex items-center gap-1 sm:gap-2 text-sm sm:text-base ${activeCourseTab === 'upcoming' ? 'bg-[var(--secondary)] text-[var(--accent)]' : 'text-[var(--muted)] hover:text-[var(--text)]'}`}
                 onClick={() => setActiveCourseTab('upcoming')}
               >
-                <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
                 </svg>
                 <span>Upcoming</span>
@@ -2505,7 +2505,7 @@ export default function Portfolio() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+                  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6"
                 >
                   {/* Course cards for Completed Courses */}
                   <motion.div 
@@ -2601,7 +2601,7 @@ export default function Portfolio() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+                  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6"
                 >
                   {/* Course cards for Current Courses */}
                   <motion.div 
@@ -2827,26 +2827,26 @@ export default function Portfolio() {
           
           {/* Tab Navigation */}
           <div className="mb-8">
-            <div className="flex space-x-2 border-b border-[var(--divider)] pb-2">
+            <div className="flex flex-wrap space-x-0 space-y-2 sm:space-y-0 sm:space-x-2 border-b border-[var(--divider)] pb-2">
               <button 
-                className={`px-4 py-2 font-medium rounded-t-lg flex items-center gap-2 ${activeTab === 'technical' ? 'bg-[var(--secondary)] text-[var(--accent)]' : 'text-[var(--muted)] hover:text-[var(--text)]'}`}
+                className={`px-3 sm:px-4 py-2 font-medium rounded-t-lg flex items-center gap-1 sm:gap-2 text-sm sm:text-base ${activeTab === 'technical' ? 'bg-[var(--secondary)] text-[var(--accent)]' : 'text-[var(--muted)] hover:text-[var(--text)]'}`}
                 onClick={() => setActiveTab('technical')}
               >
-                <FaLaptopCode size={18} />
+                <FaLaptopCode size={16} className="sm:text-lg" />
                 <span>Technical</span>
               </button>
               <button 
-                className={`px-4 py-2 font-medium rounded-t-lg flex items-center gap-2 ${activeTab === 'creative' ? 'bg-[var(--secondary)] text-[var(--accent)]' : 'text-[var(--muted)] hover:text-[var(--text)]'}`}
+                className={`px-3 sm:px-4 py-2 font-medium rounded-t-lg flex items-center gap-1 sm:gap-2 text-sm sm:text-base ${activeTab === 'creative' ? 'bg-[var(--secondary)] text-[var(--accent)]' : 'text-[var(--muted)] hover:text-[var(--text)]'}`}
                 onClick={() => setActiveTab('creative')}
               >
-                <FaPalette size={18} />
+                <FaPalette size={16} className="sm:text-lg" />
                 <span>Creative</span>
               </button>
               <button 
-                className={`px-4 py-2 font-medium rounded-t-lg flex items-center gap-2 ${activeTab === 'lifestyle' ? 'bg-[var(--secondary)] text-[var(--accent)]' : 'text-[var(--muted)] hover:text-[var(--text)]'}`}
+                className={`px-3 sm:px-4 py-2 font-medium rounded-t-lg flex items-center gap-1 sm:gap-2 text-sm sm:text-base ${activeTab === 'lifestyle' ? 'bg-[var(--secondary)] text-[var(--accent)]' : 'text-[var(--muted)] hover:text-[var(--text)]'}`}
                 onClick={() => setActiveTab('lifestyle')}
               >
-                <FaLeaf size={18} />
+                <FaLeaf size={16} className="sm:text-lg" />
                 <span>Lifestyle</span>
               </button>
             </div>
@@ -2862,7 +2862,7 @@ export default function Portfolio() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+                  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
                 >
                   {/* Tile 1 */}
                   <motion.div 
@@ -2965,7 +2965,7 @@ export default function Portfolio() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+                  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
                 >
                   {/* Tile 1 */}
                   <motion.div 
@@ -3068,7 +3068,7 @@ export default function Portfolio() {
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
-                  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+                  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6"
                 >
                   {/* Tile 1 */}
                   <motion.div 
