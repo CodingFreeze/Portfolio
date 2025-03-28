@@ -141,6 +141,42 @@ code {
     width: 100% !important;
     margin-top: 0.75rem;
   }
+  
+  /* Standardize skill box sizes */
+  #skills .grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.75rem !important;
+  }
+  
+  #skills .min-h-\[220px\] {
+    min-height: 200px !important;
+  }
+  
+  /* Standardize summary boxes on mobile */
+  #skills .sm\:grid-cols-4 {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 0.5rem !important;
+  }
+  
+  #skills .min-h-\[80px\] {
+    min-height: 70px !important;
+  }
+  
+  /* Adjust text sizes for skill boxes on very small screens */
+  @media (max-width: 380px) {
+    #skills h3 {
+      font-size: 0.85rem !important;
+    }
+    
+    #skills p {
+      font-size: 0.7rem !important;
+    }
+    
+    #skills svg {
+      width: 60px !important;
+      height: 60px !important;
+    }
+  }
 }
 
 /* Logo styling */

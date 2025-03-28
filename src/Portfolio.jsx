@@ -7,7 +7,7 @@ import { FaGithub, FaLinkedin, FaEnvelope, FaPython, FaReact, FaNodeJs, FaDataba
 import { SiTypescript, SiTailwindcss } from 'react-icons/si';
 import { Link } from 'react-router-dom';
 import './mobileStyles.css';
-import logoImage from './assets/images/logo.png'; // Import the logo image
+import logoImage from './assets/images/Portfolio Logo.png'; // Import the logo image
 
 const TiltCard = ({ children, className }) => {
   const [tiltValues, setTiltValues] = useState({ x: 0, y: 0 });
@@ -2078,9 +2078,9 @@ export default function Portfolio() {
                 className="transition-all duration-300"
               >
                 <div 
-                  className="block overflow-hidden rounded-lg border border-[var(--accent)] border-opacity-20 shadow-sm hover:shadow-lg"
+                  className="block overflow-hidden rounded-lg border border-[var(--accent)] border-opacity-20 shadow-sm hover:shadow-lg h-full"
                 >
-                  <div className="flex flex-col items-center p-5 bg-[var(--secondary)] hover:bg-opacity-80 transition-colors duration-300 relative h-full">
+                  <div className="flex flex-col items-center p-5 bg-[var(--secondary)] hover:bg-opacity-80 transition-colors duration-300 relative h-full min-h-[220px]">
                     {/* Gradient background for card */}
                     <div className="absolute inset-0 bg-[var(--accent)] opacity-5 z-0"></div>
                     
@@ -2129,7 +2129,7 @@ export default function Portfolio() {
                     </h3>
                     
                     {/* Skill Description */}
-                    <p className="text-xs text-center text-[var(--muted)] relative z-10">
+                    <p className="text-xs text-center text-[var(--muted)] relative z-10 flex-grow">
                       {skill.description}
                     </p>
                     
@@ -2165,19 +2165,19 @@ export default function Portfolio() {
               </p>
               
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
-                <div className="bg-[var(--bg)] p-4 rounded-lg text-center transform transition-transform hover:scale-105">
+                <div className="bg-[var(--bg)] p-4 rounded-lg text-center transform transition-transform hover:scale-105 h-full min-h-[80px] flex flex-col items-center justify-center">
                   <div className="text-3xl font-bold text-[var(--accent)]">4+</div>
                   <div className="text-xs text-[var(--muted)]">Years Coding</div>
                 </div>
-                <div className="bg-[var(--bg)] p-4 rounded-lg text-center transform transition-transform hover:scale-105">
+                <div className="bg-[var(--bg)] p-4 rounded-lg text-center transform transition-transform hover:scale-105 h-full min-h-[80px] flex flex-col items-center justify-center">
                   <div className="text-3xl font-bold text-[var(--accent)]">10+</div>
                   <div className="text-xs text-[var(--muted)]">Technologies</div>
                 </div>
-                <div className="bg-[var(--bg)] p-4 rounded-lg text-center transform transition-transform hover:scale-105">
+                <div className="bg-[var(--bg)] p-4 rounded-lg text-center transform transition-transform hover:scale-105 h-full min-h-[80px] flex flex-col items-center justify-center">
                   <div className="text-3xl font-bold text-[var(--accent)]">20+</div>
                   <div className="text-xs text-[var(--muted)]">Projects</div>
                 </div>
-                <div className="bg-[var(--bg)] p-4 rounded-lg text-center transform transition-transform hover:scale-105">
+                <div className="bg-[var(--bg)] p-4 rounded-lg text-center transform transition-transform hover:scale-105 h-full min-h-[80px] flex flex-col items-center justify-center">
                   <div className="text-3xl font-bold text-[var(--accent)]">100+</div>
                   <div className="text-xs text-[var(--muted)]">Contributions</div>
                 </div>
