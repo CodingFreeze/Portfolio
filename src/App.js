@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { lazy, Suspense } from 'react';
+import { AnimatePresence } from 'framer-motion';
+
+// Lazily load components for better performance
+const Portfolio = lazy(() => import('./Portfolio'));
+const Notes = lazy(() => import('./Notes'));
+const Thoughts = lazy(() => import('./Thoughts'));
+
+// Loading spinner component
+const LoadingSpinner = () => (
+  <div className="flex items-center justify-center h-screen w-screen bg-[var(--bg)]">
+    <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-[var(--accent)]"></div>
+  </div>
+);
 
 function App() {
+  const location = useLocation();
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AnimatePresence mode="wait">
+      <Suspense fallback={<LoadingSpinner />}>
+        <Routes location={location} key={location.pathname}>
+          <Route path="/" element={<Portfolio />} />
+          <Route path="/notes" element={<Notes />} />
+          <Route path="/thoughts" element={<Thoughts />} />
+        </Routes>
+      </Suspense>
+    </AnimatePresence>
   );
 }
 

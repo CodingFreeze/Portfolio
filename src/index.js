@@ -1,17 +1,34 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App';
+
+// Optimize performance by measuring and reporting web vitals
 import reportWebVitals from './reportWebVitals';
 
+// Enable performance monitoring in development
+if (process.env.NODE_ENV === 'development') {
+  window.__REACT_DEVTOOLS_SHOW_PERFORMANCE__ = true;
+}
+
+// Create root with concurrency features enabled
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+// Disable StrictMode in production for better performance
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  process.env.NODE_ENV === 'development' ? (
+    <React.StrictMode>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </React.StrictMode>
+  ) : (
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  )
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+// Report web vitals
+reportWebVitals(console.log);
