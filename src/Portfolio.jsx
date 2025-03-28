@@ -1,9 +1,15 @@
-import { Card, CardContent } from "./components/ui/card";
 import { Button } from "./components/ui/button";
 import { useState, useEffect, useRef, Suspense, lazy, useMemo } from "react";
-import { motion, AnimatePresence, useScroll, useTransform, useMotionValue, useTransform as useFramerTransform } from "framer-motion";
-import { Sun, Moon, ArrowUp, Loader } from "lucide-react";
-import { FaGithub, FaLinkedin, FaEnvelope, FaPython, FaReact, FaNodeJs, FaDatabase, FaCode, FaGit, FaMusic, FaPalette, FaBookOpen, FaHiking, FaGamepad, FaChess, FaGraduationCap, FaLaptopCode, FaUserAstronaut, FaLeaf, FaCamera, FaGlobeAmericas, FaExternalLinkAlt, FaLightbulb, FaTools, FaRocket, FaChartBar, FaBrain, FaUsers, FaSync, FaBolt, FaServer, FaCloud, FaMountain } from 'react-icons/fa';
+import { motion, AnimatePresence, useScroll, useTransform } from "framer-motion";
+import { Sun, Moon, ArrowUp } from "lucide-react";
+import { 
+  FaGithub, FaLinkedin, FaEnvelope, FaPython, FaReact, FaNodeJs, 
+  FaDatabase, FaCode, FaLaptopCode, FaExternalLinkAlt, FaLightbulb,
+  FaChartBar, FaBrain, FaTools, FaServer, FaCloud, FaRocket, 
+  FaUsers, FaSync, FaBolt, FaPalette, FaLeaf, FaUserAstronaut,
+  FaMusic, FaCamera, FaBookOpen, FaHiking, FaChess, FaGamepad,
+  FaGlobeAmericas, FaGit
+} from 'react-icons/fa';
 import { SiTypescript, SiTailwindcss } from 'react-icons/si';
 import { Link } from 'react-router-dom';
 import './mobileStyles.css';
@@ -256,13 +262,23 @@ export default function Portfolio() {
   
   // For scroll animations
   const scrollRef = useRef(null);
+  
+  // Define state for transformed values
+  const [scrollTransforms, setScrollTransforms] = useState({
+    opacity: null,
+    y: null
+  });
+  
+  // These hooks need to be at the top level of the component
+  // Create the scroll progress control - layoutEffect: false prevents hydration issues
   const { scrollYProgress: sectionScrollProgress } = useScroll({
     target: scrollRef,
     offset: ["start end", "end start"],
-    smooth: 0.1,  // Reduced from 0.5 for better performance
+    smooth: 0.1,
     layoutEffect: false
   });
   
+  // Create the transforms at the top level
   const sectionOpacity = useTransform(
     sectionScrollProgress,
     [0, 0.2, 0.8, 1],
@@ -274,6 +290,16 @@ export default function Portfolio() {
     [0, 0.2, 0.8, 1],
     [100, 0, 0, -100]
   );
+  
+  // Update the state with the motion values on mount
+  useEffect(() => {
+    if (scrollRef.current) {
+      setScrollTransforms({
+        opacity: sectionOpacity,
+        y: sectionY
+      });
+    }
+  }, [sectionOpacity, sectionY]);
 
   // Add debounced scroll handler to reduce calculations
   useEffect(() => {
@@ -596,7 +622,6 @@ export default function Portfolio() {
   const xPosition = useTransform(scrollYProgress, [0, 1], [-100, 0]);
   const [mode, setMode] = useState('light');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [showScrollButton, setShowScrollButton] = useState(false);
   const [activeTab, setActiveTab] = useState('technical');
   const [activeCourseTab, setActiveCourseTab] = useState('completed');
 
@@ -821,7 +846,6 @@ export default function Portfolio() {
               width: `${star.size}px`,
               height: `${star.size}px`,
               backgroundColor: darkMode ? "rgba(255, 255, 255, 0.6)" : "rgba(100, 120, 140, 0.3)",
-              marginBottom: "3rem",
               boxShadow: darkMode ? "0 0 4px 2px rgba(255, 255, 255, 0.6)" : "0 0 3px 1px rgba(100, 120, 140, 0.2)",
               transform: `translateZ(0)`,  // Force GPU acceleration
             }}
@@ -1175,7 +1199,7 @@ export default function Portfolio() {
           viewport={{ once: true }}
           ref={scrollRef}
           style={{
-            opacity: sectionOpacity,
+            opacity: scrollTransforms.opacity,
             background: darkMode 
               ? "linear-gradient(135deg, rgba(20,20,22,0.7) 0%, rgba(35,35,40,0.5) 50%, rgba(20,20,22,0.7) 100%)" 
               : "linear-gradient(135deg, rgba(230,230,235,0.7) 0%, rgba(240,240,245,0.5) 50%, rgba(230,230,235,0.7) 100%)",
@@ -1312,7 +1336,6 @@ export default function Portfolio() {
               : "linear-gradient(135deg, rgba(230,230,235,0.7) 50%, rgba(240,240,245,0.5) 90%, rgba(230,230,235,0.7) 100%)",
             borderRadius: "16px",
             padding: "2rem",
-            marginBottom: "3rem",
               boxShadow: darkMode
               ? "inset 0 0 30px rgba(0,0,0,0.3)"
               : "inset 0 0 30px rgba(0,0,0,0.05)",
@@ -1642,7 +1665,6 @@ export default function Portfolio() {
               : "linear-gradient(135deg, rgba(230,230,235,0.7) 0%, rgba(240,240,245,0.5) 50%, rgba(230,230,235,0.7) 100%)",
             borderRadius: "16px",
             padding: "2rem",
-            marginBottom: "3rem",
               boxShadow: darkMode
               ? "inset 0 0 30px rgba(0,0,0,0.3)"
               : "inset 0 0 30px rgba(0,0,0,0.05)",
@@ -1819,8 +1841,7 @@ export default function Portfolio() {
               : "linear-gradient(135deg, rgba(230,230,235,0.7) 0%, rgba(240,240,245,0.5) 50%, rgba(230,230,235,0.7) 100%)",
             borderRadius: "16px",
             padding: "2rem",
-            marginBottom: "3rem",
-              boxShadow: darkMode
+            boxShadow: darkMode
               ? "inset 0 0 30px rgba(0,0,0,0.3)"
               : "inset 0 0 30px rgba(0,0,0,0.05)",
             marginBottom: "2rem"
@@ -2012,7 +2033,6 @@ export default function Portfolio() {
               : "linear-gradient(135deg, rgba(230,230,235,0.7) 0%, rgba(240,240,245,0.5) 50%, rgba(230,230,235,0.7) 100%)",
             borderRadius: "16px",
             padding: "2rem",
-            marginBottom: "3rem",
               boxShadow: darkMode
               ? "inset 0 0 30px rgba(0,0,0,0.3)"
               : "inset 0 0 30px rgba(0,0,0,0.05)",
@@ -2252,7 +2272,6 @@ export default function Portfolio() {
               : "linear-gradient(135deg, rgba(230,230,235,0.7) 0%, rgba(240,240,245,0.5) 50%, rgba(230,230,235,0.7) 100%)",
             borderRadius: "16px",
             padding: "2rem",
-            marginBottom: "3rem",
               boxShadow: darkMode
               ? "inset 0 0 30px rgba(0,0,0,0.3)"
               : "inset 0 0 30px rgba(0,0,0,0.05)",
@@ -2615,7 +2634,6 @@ export default function Portfolio() {
               : "linear-gradient(135deg, rgba(230,230,235,0.7) 0%, rgba(240,240,245,0.5) 50%, rgba(230,230,235,0.7) 100%)",
             borderRadius: "16px",
             padding: "2rem",
-            marginBottom: "3rem",
             boxShadow: darkMode
               ? "inset 0 0 30px rgba(0,0,0,0.3)"
               : "inset 0 0 30px rgba(0,0,0,0.05)",
@@ -3028,7 +3046,7 @@ export default function Portfolio() {
       </motion.button>
 
       {/* Add text animations to section titles */}
-      <style jsx global>{`
+      <style>{`
         :root {
           --gradient-animation: gradient 8s linear infinite;
         }
