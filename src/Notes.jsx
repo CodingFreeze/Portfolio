@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import logoImage from './assets/images/Portfolio Logo.png'; // Import the logo image
 
 export default function Notes() {
   return (
@@ -27,7 +28,11 @@ export default function Notes() {
           to="/"
           className="text-xl sm:text-2xl font-bold text-[var(--accent)] hover:scale-110 transition-transform duration-300"
         >
-          [AR]
+          <img 
+            src={logoImage} 
+            alt="Abdullah Rana Logo" 
+            className="w-12 h-12 sm:w-14 sm:h-14 rounded-full"
+          />
         </Link>
       </motion.header>
 
