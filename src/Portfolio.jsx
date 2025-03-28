@@ -6,6 +6,7 @@ import { Sun, Moon, ArrowUp, Loader } from "lucide-react";
 import { FaGithub, FaLinkedin, FaEnvelope, FaPython, FaReact, FaNodeJs, FaDatabase, FaCode, FaGit, FaMusic, FaPalette, FaBookOpen, FaHiking, FaGamepad, FaChess, FaGraduationCap, FaLaptopCode, FaUserAstronaut, FaLeaf, FaCamera, FaGlobeAmericas, FaExternalLinkAlt, FaLightbulb, FaTools, FaRocket, FaChartBar, FaBrain, FaUsers, FaSync, FaBolt, FaServer, FaCloud, FaMountain } from 'react-icons/fa';
 import { SiTypescript, SiTailwindcss } from 'react-icons/si';
 import { Link } from 'react-router-dom';
+import './mobileStyles.css';
 
 const TiltCard = ({ children, className }) => {
   const [tiltValues, setTiltValues] = useState({ x: 0, y: 0 });
@@ -398,6 +399,60 @@ export default function Portfolio() {
       });
     });
   }, [darkMode, isLoading, loadingTheme]);
+
+  // Add CSS to fix mobile-specific issues in a separate useEffect to avoid redeclarations
+  useEffect(() => {
+    const style = document.createElement('style');
+    style.textContent = `
+      @media (max-width: 640px) {
+        .group .flex-col {
+          width: 100%;
+        }
+        
+        /* Fix for project buttons on mobile */
+        .group .flex-wrap {
+          display: flex;
+          flex-wrap: wrap;
+          width: 100%;
+        }
+        
+        /* Make buttons more touch-friendly on mobile */
+        .group a {
+          display: flex;
+          align-items: center;
+          min-height: 36px;
+          touch-action: manipulation;
+        }
+        
+        /* Improve spacing on mobile */
+        .group .gap-2 {
+          gap: 0.625rem;
+        }
+        
+        /* Fix for mobile navigation */
+        .fixed.inset-0 {
+          z-index: 100;
+        }
+      }
+    `;
+    
+    // Remove any previous style element with the same id
+    const existingStyle = document.getElementById('mobile-fixes');
+    if (existingStyle) {
+      existingStyle.remove();
+    }
+    
+    // Add id and append to head
+    style.id = 'mobile-fixes';
+    document.head.appendChild(style);
+    
+    // Clean up function
+    return () => {
+      if (document.getElementById('mobile-fixes')) {
+        document.getElementById('mobile-fixes').remove();
+      }
+    };
+  }, []);
 
   const projects = [
     {
@@ -968,7 +1023,25 @@ export default function Portfolio() {
           backgroundColor: 'var(--bg)'
         }}
       >
-        <div className="flex gap-3 sm:gap-6 text-sm sm:text-base lg:text-lg font-semibold pl-6 sm:pl-8 md:pl-12 lg:pl-16">
+        {/* Mobile Menu Toggle Button - Only visible on mobile */}
+        <button 
+          className="lg:hidden z-50 p-1.5 ml-4 text-[var(--text)] hover:text-[var(--accent)] transition-colors" 
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+        >
+          {isMenuOpen ? (
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          ) : (
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          )}
+        </button>
+
+        {/* Desktop Navigation - Hidden on mobile */}
+        <div className="hidden lg:flex gap-3 sm:gap-6 text-sm sm:text-base lg:text-lg font-semibold pl-6 sm:pl-8 md:pl-12 lg:pl-16">
           <a 
             href="#about" 
             className="hover:text-[var(--link-hover)] transition-all duration-300 hover:scale-105"
@@ -1006,7 +1079,8 @@ export default function Portfolio() {
           [AR]
         </div>
 
-        <div className="flex items-center gap-3 sm:gap-6 text-sm sm:text-base lg:text-lg font-semibold pr-6 sm:pr-8 md:pr-12 lg:pr-16">
+        {/* Desktop Right Navigation - Hidden on mobile */}
+        <div className="hidden lg:flex items-center gap-3 sm:gap-6 text-sm sm:text-base lg:text-lg font-semibold pr-6 sm:pr-8 md:pr-12 lg:pr-16">
           <a 
             href="#current-projects" 
             className="hover:text-[var(--link-hover)] transition-all duration-300 hover:scale-105"
@@ -1039,10 +1113,87 @@ export default function Portfolio() {
             </button>
           </div>
         </div>
+
+        {/* Mobile Theme Toggle - Only visible on mobile */}
+        <div className="lg:hidden flex items-center mr-4 z-50">
+          <button
+            onClick={handleThemeToggle}
+            className="rounded-full p-1.5 sm:p-2 hover:bg-[var(--accent)] hover:text-white transition-all duration-300 hover:scale-105"
+            disabled={isAnimating}
+            aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
+          >
+            {darkMode ? <Sun className="w-5 h-5 sm:w-6 sm:h-6" /> : <Moon className="w-5 h-5 sm:w-6 sm:h-6" />}
+          </button>
+        </div>
+        
+        {/* Mobile Menu - Full Screen Overlay */}
+        <AnimatePresence>
+          {isMenuOpen && (
+            <motion.div 
+              className="fixed inset-0 bg-[var(--bg)] z-40 flex items-center justify-center lg:hidden"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
+            >
+              <div className="flex flex-col items-center gap-6 text-xl">
+                <a 
+                  href="#about" 
+                  className="hover:text-[var(--link-hover)] transition-all duration-300 hover:scale-105"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  About Me
+                </a>
+                <a 
+                  href="#projects" 
+                  className="hover:text-[var(--link-hover)] transition-all duration-300 hover:scale-105"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Projects
+                </a>
+                <a 
+                  href="#experience" 
+                  className="hover:text-[var(--link-hover)] transition-all duration-300 hover:scale-105"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Experience
+                </a>
+                <a 
+                  href="#skills" 
+                  className="hover:text-[var(--link-hover)] transition-all duration-300 hover:scale-105"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Skills
+                </a>
+                <a 
+                  href="#current-projects" 
+                  className="hover:text-[var(--link-hover)] transition-all duration-300 hover:scale-105"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  In Progress
+                </a>
+                <a 
+                  href="#coursework" 
+                  className="hover:text-[var(--link-hover)] transition-all duration-300 hover:scale-105"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Coursework
+                </a>
+                <a 
+                  href="#passions" 
+                  className="hover:text-[var(--link-hover)] transition-all duration-300 hover:scale-105"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Passions
+                </a>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </motion.header>
 
-      <div className="min-h-screen flex items-center justify-center z-50 relative px-6 sm:px-8 md:px-12 lg:px-16">
-        <div className="text-center px-4 relative">
+      <div className="min-h-screen flex items-center justify-center z-50 relative px-4 sm:px-6 md:px-8 lg:px-16">
+        <div className="text-center px-2 sm:px-4 relative max-w-full">
           {/* Animated background elements */}
           <motion.div
             className="absolute inset-0 -z-10"
@@ -1108,7 +1259,7 @@ export default function Portfolio() {
               
           {/* Animated text reveal */}
           <motion.h1 
-            className="text-[3rem] sm:text-[5rem] font-bold mb-0 relative"
+            className="text-[2.5rem] sm:text-[3.5rem] md:text-[5rem] font-bold mb-0 relative"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.1 }}
@@ -1133,9 +1284,9 @@ export default function Portfolio() {
               Rana
             </motion.span>
           </motion.h1>
-          <div className="flex flex-col gap-0 -mt-3">
+          <div className="flex flex-col gap-0 -mt-2 sm:-mt-3">
             <motion.p 
-              className="text-base md:text-lg text-[var(--muted)]"
+              className="text-sm sm:text-base md:text-lg text-[var(--muted)]"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 1.6 }}
@@ -1147,10 +1298,10 @@ export default function Portfolio() {
         </div>
       </div>
 
-      <div className="container mx-auto px-6 sm:px-8 md:px-12 lg:px-16">
+      <div className="container mx-auto px-4 sm:px-6 md:px-8 lg:px-16">
         <motion.section 
           id="about" 
-          className="min-h-[50vh] py-10 relative" 
+          className="min-h-[50vh] py-6 sm:py-10 relative" 
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -1162,22 +1313,22 @@ export default function Portfolio() {
               ? "linear-gradient(135deg, rgba(20,20,22,0.7) 0%, rgba(35,35,40,0.5) 50%, rgba(20,20,22,0.7) 100%)" 
               : "linear-gradient(135deg, rgba(230,230,235,0.7) 0%, rgba(240,240,245,0.5) 50%, rgba(230,230,235,0.7) 100%)",
             borderRadius: "16px",
-            padding: "2rem",
-            marginBottom: "3rem",
+            padding: "1.5rem",
+            marginBottom: "2rem",
               boxShadow: darkMode
               ? "inset 0 0 30px rgba(0,0,0,0.3)"
               : "inset 0 0 30px rgba(0,0,0,0.05)"
           }}
         >
                 <motion.div
-            className="flex flex-col gap-8"
+            className="flex flex-col gap-6 sm:gap-8"
                   style={{
               position: "relative",
               zIndex: 1
             }}
           >
             <motion.h2 
-              className="text-4xl font-semibold mb-8 relative z-10"
+              className="text-3xl sm:text-4xl font-semibold mb-4 sm:mb-8 relative z-10"
               animate={{ y: 0 }}
               initial={{ y: 20 }}
               transition={{ 
@@ -1212,24 +1363,24 @@ export default function Portfolio() {
                 ease: "easeInOut" 
               }}
             />
-            <div className="flex flex-col md:flex-row items-center gap-10">
+            <div className="flex flex-col md:flex-row items-center gap-6 sm:gap-10">
               <div className="flex-1">
-                <p className="text-[var(--muted)] text-lg leading-relaxed">
+                <p className="text-base sm:text-lg leading-relaxed text-[var(--muted)]">
             I'm a Computer Science and Mathematics student at the University of Virginia, passionate about software engineering, fintech, and AI. I enjoy building impactful tech and continuously learning new things.
           </p>
               </div>
               
               <div className="hidden md:block w-[1px] h-32 bg-[var(--divider)]"></div>
               
-              <div className="flex-1 flex flex-col gap-4 text-base">
+              <div className="flex-1 flex flex-col gap-4 text-sm sm:text-base">
                 <a 
                   href="https://github.com/CodingFreeze" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 hover:text-[var(--accent)] transition-colors"
                 >
-                  <FaGithub className="w-5 h-5" />
-                  <span>github.com/CodingFreeze</span>
+                  <FaGithub className="w-4 h-4 sm:w-5 sm:h-5" />
+                  <span className="truncate">github.com/CodingFreeze</span>
                 </a>
                 <a 
                   href="https://www.linkedin.com/in/abdullahranaofc/" 
@@ -1237,15 +1388,15 @@ export default function Portfolio() {
                   rel="noopener noreferrer"
                   className="flex items-center gap-3 hover:text-[var(--accent)] transition-colors"
                 >
-                  <FaLinkedin className="w-5 h-5" />
-                  <span>linkedin.com/in/abdullahranaofc</span>
+                  <FaLinkedin className="w-4 h-4 sm:w-5 sm:h-5" />
+                  <span className="truncate">linkedin.com/in/abdullahranaofc</span>
                 </a>
                 <a 
                   href="mailto:abdullahranaofc@gmail.com"
                   className="flex items-center gap-3 hover:text-[var(--accent)] transition-colors"
                 >
-                  <FaEnvelope className="w-5 h-5" />
-                  <span>abdullahranaofc@gmail.com</span>
+                  <FaEnvelope className="w-4 h-4 sm:w-5 sm:h-5" />
+                  <span className="truncate">abdullahranaofc@gmail.com</span>
                 </a>
               </div>
             </div>
@@ -1363,7 +1514,7 @@ export default function Portfolio() {
                       }
                     }
                   }}
-                  className="group h-auto sm:h-[300px] transform transition-transform duration-300 hover:scale-102 hover:-translate-y-1"
+                  className="group h-auto transform transition-transform duration-300 hover:scale-102 hover:-translate-y-1"
                 >
                   <div 
                     className="h-full overflow-hidden relative rounded-lg border border-[var(--accent)] border-opacity-20 shadow-sm hover:shadow-lg bg-[var(--secondary)] transition-all duration-300"
@@ -1384,41 +1535,41 @@ export default function Portfolio() {
                       <p className="text-[var(--muted)] mb-4 text-sm sm:text-base">{project.description}</p>
                       
                       {/* What I Learned Section with enhanced styling */}
-                      <div className="p-3 rounded-md bg-[var(--bg)] bg-opacity-50 mt-auto mb-24 border-l-2 border-[var(--accent)] border-opacity-40">
+                      <div className="p-3 rounded-md bg-[var(--bg)] bg-opacity-50 mt-auto mb-4 border-l-2 border-[var(--accent)] border-opacity-40">
                         <h4 className="text-sm font-medium mb-1 text-[var(--accent)]">What I Learned</h4>
                         <p className="text-[var(--muted)] text-xs sm:text-sm">{project.learned || "Various skills and technologies related to this project."}</p>
                       </div>
                       
-                      {/* Bottom section split into left and right - positioned at bottom */}
-                      <div className="flex justify-between items-end absolute bottom-4 left-4 right-4 sm:left-6 sm:right-6">
-                        {/* Left: GitHub and Live Demo buttons */}
-                        <div className="flex flex-wrap gap-3">
+                      {/* Bottom section with improved responsive layout */}
+                      <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end gap-4 mt-auto w-full">
+                        {/* Left: GitHub and Live Demo buttons with improved mobile styling */}
+                        <div className="flex flex-wrap gap-2 w-full sm:w-auto project-buttons">
                           <Button 
-                            className="flex items-center gap-2 bg-transparent hover:bg-[var(--accent)] hover:text-white transition-colors text-sm px-4 py-2 border border-[var(--accent)] text-[var(--accent)]"
+                            className="flex items-center gap-2 bg-transparent hover:bg-[var(--accent)] hover:text-white transition-colors text-xs sm:text-sm px-3 sm:px-4 py-1 sm:py-2 border border-[var(--accent)] text-[var(--accent)] min-h-[36px]"
                             asChild
                           >
-                            <a href={project.github} target="_blank" rel="noopener noreferrer">
-                              <FaGithub className="w-4 h-4" />
-                              GitHub
+                            <a href={project.github} target="_blank" rel="noopener noreferrer" className="whitespace-nowrap">
+                              <FaGithub className="w-3 h-3 sm:w-4 sm:h-4 flex-shrink-0" />
+                              <span>GitHub</span>
                             </a>
                           </Button>
                           <Button 
-                            className="flex items-center gap-2 bg-[var(--accent)] hover:opacity-90 transition-opacity px-4 py-2 text-sm text-white"
+                            className="flex items-center gap-2 bg-[var(--accent)] hover:opacity-90 transition-opacity px-3 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm text-white min-h-[36px]"
                             asChild
                           >
-                            <a href={project.demo} target="_blank" rel="noopener noreferrer">
-                              <FaExternalLinkAlt className="w-3 h-3 text-white" />
-                              Live Demo
+                            <a href={project.demo} target="_blank" rel="noopener noreferrer" className="whitespace-nowrap">
+                              <FaExternalLinkAlt className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-white flex-shrink-0" />
+                              <span>Live Demo</span>
                             </a>
                           </Button>
                         </div>
                         
                         {/* Right: Tech stack boxes with enhanced styling */}
-                        <div className="flex flex-wrap gap-2 justify-end">
+                        <div className="flex flex-wrap gap-1 sm:gap-2 justify-start sm:justify-end w-full sm:w-auto project-tech-stack">
                           {project.techStack && project.techStack.map((tech, idx) => (
                             <span 
                               key={idx} 
-                              className="px-3 py-1 text-xs rounded-full transition-colors duration-200 bg-[var(--bg)] hover:bg-[var(--accent)] hover:text-white"
+                              className="px-2 py-1 text-xs rounded-full transition-colors duration-200 bg-[var(--bg)] hover:bg-[var(--accent)] hover:text-white whitespace-nowrap"
                             >
                               {tech}
                             </span>
@@ -1711,7 +1862,7 @@ export default function Portfolio() {
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
                   whileHover={{ scale: 1.02, y: -5 }}
-                  className="h-[200px]"
+                  className="h-auto"
                 >
                   <div 
                     className="relative overflow-hidden h-full rounded-lg border border-[var(--accent)] border-opacity-20 shadow-sm hover:shadow-lg bg-[var(--secondary)] transition-all duration-300"
@@ -1725,7 +1876,7 @@ export default function Portfolio() {
                     
                     <div className="p-6 pl-12 flex flex-col h-full relative z-10">
                       <div className="flex-grow">
-                        <div className="flex justify-between items-start mb-2">
+                        <div className="flex flex-col sm:flex-row justify-between items-start mb-2 gap-2">
                           <h3 className="text-xl font-semibold">{exp.title}</h3>
                           <span className="px-3 py-1 text-xs rounded-full bg-[var(--accent)] bg-opacity-10 text-white">
                             {exp.period}
@@ -1738,7 +1889,7 @@ export default function Portfolio() {
                         <p className="text-[var(--muted)]">{exp.description}</p>
                       </div>
                       
-                      <div className="flex gap-2 mt-4">
+                      <div className="flex gap-2 mt-4 flex-wrap">
                         <motion.button 
                           className="flex items-center gap-2 bg-transparent hover:bg-[var(--accent)] hover:text-white transition-colors text-xs px-3 py-1 rounded-md border border-[var(--accent)] text-[var(--accent)]"
                           whileHover={{ scale: 1.05 }}
@@ -1755,8 +1906,8 @@ export default function Portfolio() {
                         </motion.button>
                       </div>
                     </div>
-          </div>
-        </motion.div>
+                  </div>
+                </motion.div>
               ))}
             </AnimatePresence>
           </div>
@@ -1880,7 +2031,7 @@ export default function Portfolio() {
           {/* Skills Categories - Enhanced with animations and better visuals */}
           
           {/* Skill Grid with redesigned skill cards */}
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6 mb-10">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4 md:gap-6 mb-10">
             {skills
               .map((skill, index) => (
         <motion.div
@@ -2112,9 +2263,9 @@ export default function Portfolio() {
                   </div>
                 </div>
                 <div className="md:w-2/3 p-6">
-                  <div className="flex justify-between items-center mb-4">
+                  <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 gap-2">
                     <h4 className="font-medium text-lg">Progress Highlights</h4>
-                    <div className="text-sm px-3 py-1 rounded-full bg-[var(--accent)] bg-opacity-20 text-white font-medium">
+                    <div className="text-sm px-3 py-1 rounded-full bg-[var(--accent)] bg-opacity-20 text-white font-medium whitespace-nowrap">
                       Est. Completion: Q3 2023
                     </div>
                   </div>
@@ -2149,9 +2300,9 @@ export default function Portfolio() {
                         <div style={{ width: "65%" }} className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-[var(--accent)]"></div>
                       </div>
                       <div className="flex justify-between text-xs text-[var(--muted)]">
-                        <span>Project Start</span>
-                        <span>Current Progress</span>
-                        <span>MVP Launch</span>
+                        <span>Start</span>
+                        <span>Current</span>
+                        <span>MVP</span>
                       </div>
                     </div>
                   </div>
@@ -2192,9 +2343,9 @@ export default function Portfolio() {
                   </div>
                 </div>
                 <div className="md:w-2/3 p-6">
-                  <div className="flex justify-between items-center mb-4">
+                  <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 gap-2">
                     <h4 className="font-medium text-lg">Project Plan</h4>
-                    <div className="text-sm px-3 py-1 rounded-full bg-[var(--accent)] bg-opacity-20 text-white font-medium">
+                    <div className="text-sm px-3 py-1 rounded-full bg-[var(--accent)] bg-opacity-20 text-white font-medium whitespace-nowrap">
                       Est. Completion: Q4 2023
                     </div>
                   </div>

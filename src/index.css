@@ -60,3 +60,76 @@ code {
     -webkit-overflow-scrolling: touch;
   }
 }
+
+/* Mobile responsiveness fixes */
+@media (max-width: 768px) {
+  /* Improve mobile spacing and readability */
+  .container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  
+  /* Fix project card display */
+  .group {
+    height: auto !important;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Fix button display in projects */
+  .group a, button {
+    min-height: 36px;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Fix icon spacing */
+  .group a svg {
+    flex-shrink: 0;
+    margin-right: 0.25rem;
+  }
+  
+  /* Improve spacing for mobile layout */
+  .group .flex-col {
+    width: 100%;
+  }
+  
+  /* Fix for flex containers */
+  .flex-wrap {
+    flex-wrap: wrap !important;
+  }
+  
+  /* Make sure buttons don't break */
+  button, a {
+    touch-action: manipulation;
+  }
+}
+
+/* Fix for the GitHub and Live Demo buttons on smaller screens */
+@media (max-width: 639px) {
+  /* Adjust button layout */
+  .flex-col.sm\:flex-row {
+    flex-direction: column !important;
+  }
+  
+  /* Fix button spacing */
+  .gap-4 {
+    gap: 0.75rem !important;
+  }
+  
+  /* Make buttons full width on mobile */
+  .w-full.sm\:w-auto {
+    width: 100% !important;
+  }
+  
+  /* Fix specific buttons */
+  .flex.flex-wrap.gap-2 {
+    width: 100% !important;
+    margin-bottom: 0.75rem;
+  }
+  
+  /* Fix tech stack wrap */
+  .justify-start.sm\:justify-end {
+    justify-content: flex-start !important;
+  }
+}

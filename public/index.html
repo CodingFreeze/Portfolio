@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
     
     <title>Abdullah | Portfolio</title>
     
@@ -10,17 +10,16 @@
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     
     <!-- Apple Touch Icon -->
-    <link rel="apple-touch-icon" sizes="192x192" href="%PUBLIC_URL%/web-app-manifest-192x192.png" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/apple-touch-icon.png" />
     
     <!-- Web App Manifest -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     
     <!-- Theme Colors -->
-    <meta name="theme-color" content="#8B0000" media="(prefers-color-scheme: dark)" />
-    <meta name="theme-color" content="#0066CC" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#000000" />
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Abdullah's Portfolio - CS + Math Student at UVA" />
+    <meta name="description" content="Abdullah Rana - Portfolio Website" />
     <meta name="keywords" content="software engineering, portfolio, web development, UVA, computer science, programming" />
     <meta name="author" content="Abdullah" />
     
@@ -41,6 +40,68 @@
     <!-- Preconnect to external resources -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <style>
+      /* Mobile specific styles */
+      @media (max-width: 768px) {
+        /* General responsive adjustments */
+        body {
+          overflow-x: hidden;
+        }
+        
+        /* Project card adjustments */
+        .group .flex-col {
+          width: 100%;
+        }
+        
+        /* Fix for project buttons on mobile */
+        .group .flex-wrap {
+          display: flex;
+          flex-wrap: wrap;
+          width: 100%;
+        }
+        
+        /* Make buttons more touch-friendly on mobile */
+        .group a, 
+        button {
+          display: flex;
+          align-items: center;
+          min-height: 36px;
+          touch-action: manipulation;
+        }
+        
+        /* Fix button text wrapping */
+        .group a span {
+          white-space: nowrap;
+        }
+        
+        /* Improve spacing on mobile */
+        .group .gap-2 {
+          gap: 0.625rem;
+        }
+        
+        /* Fix for mobile navigation */
+        .fixed.inset-0 {
+          z-index: 100;
+        }
+      }
+
+      /* Fix GitHub and Live Demo buttons specifically */
+      @media (max-width: 640px) {
+        .group a svg {
+          flex-shrink: 0;
+          margin-right: 4px;
+        }
+        
+        .group .flex-col > div:last-child {
+          margin-top: auto !important;
+        }
+        
+        .group .flex-col > div:last-child > div:first-child {
+          margin-bottom: 8px;
+        }
+      }
+    </style>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
