@@ -2210,7 +2210,7 @@ export default function Portfolio() {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              My technical toolkit spans from frontend and backend development to data science and DevOps. With 4+ years of coding experience across 10+ technologies and 20+ projects, I'm continuously learning to stay current with industry trends.
+              My technical toolkit spans from frontend and backend development to data science and DevOps. With 4+ years of coding experience across 10+ technologies and 20+ projects, I'm continuously learning new technologies to stay current with industry trends.
             </motion.p>
           </div>
 
@@ -2354,17 +2354,6 @@ export default function Portfolio() {
               ))}
             </div>
           </div>
-        </motion.section>
-
-        <motion.section 
-          id="current-projects" 
-          className="min-h-[50vh] py-10 relative"
-          variants={fadeInVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-          style={{
-            background: darkMode 
               ? "linear-gradient(135deg, rgba(20,20,22,0.7) 0%, rgba(35,35,40,0.5) 50%, rgba(20,20,22,0.7) 100%)" 
               : "linear-gradient(135deg, rgba(230,230,235,0.7) 0%, rgba(240,240,245,0.5) 50%, rgba(230,230,235,0.7) 100%)",
             borderRadius: "16px",
@@ -2406,7 +2395,7 @@ export default function Portfolio() {
               }}
             >
               <a 
-                href="https://github.com/CodingFreeze/" 
+                href="https://github.com/CodingFreeze/ai-code-assistant" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="hover:underline text-inherit transition-colors group-hover:text-[var(--accent)]"
@@ -2441,56 +2430,56 @@ export default function Portfolio() {
                   <div className="relative z-10">
                     <h3 className="text-xl font-semibold mb-2">
                       <a 
-                        href="https://github.com/CodingFreeze/" 
+                        href="https://github.com/CodingFreeze/ai-code-assistant" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="hover:underline text-inherit transition-colors group-hover:text-[var(--accent)]"
                         style={{ color: 'var(--text)' }}
                       >
-                        Black-Scholes Model Visualizer
+                        AI Code Assistant
                       </a>
                     </h3>
                     <div className="flex items-center gap-2 mb-4">
-                      <div className="w-3 h-3 rounded-full bg-blue-400 animate-pulse"></div>
-                      <span className="text-sm text-[var(--muted)]">Planning Phase</span>
+                      <div className="w-3 h-3 rounded-full bg-green-400 animate-pulse"></div>
+                      <span className="text-sm text-[var(--muted)]">Active Development</span>
                     </div>
                     <p className="text-sm text-[var(--muted)] mb-4">
-                      Creating an interactive tool to visualize the Black-Scholes option pricing model, allowing users to adjust parameters and see real-time changes in option values.
+                      Building an IDE extension that helps developers write better code through AI-powered suggestions, documentation, and refactoring.
                     </p>
                   </div>
                   <div className="flex flex-wrap gap-2 mt-4 relative z-10">
-                    <span className="px-2 py-1 text-xs rounded-md bg-[var(--bg)] text-[var(--muted)] hover:bg-[var(--accent)] hover:text-white transition-colors duration-200">JavaScript</span>
-                    <span className="px-2 py-1 text-xs rounded-md bg-[var(--bg)] text-[var(--muted)] hover:bg-[var(--accent)] hover:text-white transition-colors duration-200">D3.js</span>
-                    <span className="px-2 py-1 text-xs rounded-md bg-[var(--bg)] text-[var(--muted)] hover:bg-[var(--accent)] hover:text-white transition-colors duration-200">Financial Modeling</span>
+                    <span className="px-2 py-1 text-xs rounded-md bg-[var(--bg)] text-[var(--muted)] hover:bg-[var(--accent)] hover:text-white transition-colors duration-200">TypeScript</span>
+                    <span className="px-2 py-1 text-xs rounded-md bg-[var(--bg)] text-[var(--muted)] hover:bg-[var(--accent)] hover:text-white transition-colors duration-200">React</span>
+                    <span className="px-2 py-1 text-xs rounded-md bg-[var(--bg)] text-[var(--muted)] hover:bg-[var(--accent)] hover:text-white transition-colors duration-200">OpenAI API</span>
                   </div>
                 </div>
                 <div className="md:w-2/3 p-6">
                   <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 gap-2">
-                    <h4 className="font-medium text-lg">Project Plan</h4>
+                    <h4 className="font-medium text-lg">Progress Highlights</h4>
                     <div className="text-sm px-3 py-1 rounded-full bg-[var(--accent)] bg-opacity-20 text-white font-medium whitespace-nowrap">
-                      Est. Completion: July 2025
+                      Est. Completion: Q3 2023
                     </div>
                   </div>
                   <div className="space-y-4">
                     <div className="flex items-start gap-3">
                       <div className="w-5 h-5 rounded-full bg-[var(--accent)] flex items-center justify-center text-white mt-0.5">✓</div>
                       <div>
-                        <p className="font-medium">Study Black-Scholes mathematical model</p>
-                        <p className="text-sm text-[var(--muted)]">Researching option pricing theory and implementation approaches</p>
+                        <p className="font-medium">Set up VS Code extension infrastructure</p>
+                        <p className="text-sm text-[var(--muted)]">Created the basic extension structure with TypeScript and VS Code API</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
-                      <div className="w-5 h-5 rounded-full bg-[var(--accent)] bg-opacity-50 flex items-center justify-center text-white mt-0.5">⟳</div>
+                      <div className="w-5 h-5 rounded-full bg-[var(--accent)] flex items-center justify-center text-white mt-0.5">✓</div>
                       <div>
-                        <p className="font-medium">Design interactive UI and visualization components</p>
-                        <p className="text-sm text-[var(--muted)]">Sketching user interface layouts and data visualization techniques</p>
+                        <p className="font-medium">Integrated OpenAI API for code completions</p>
+                        <p className="text-sm text-[var(--muted)]">Added support for generating code suggestions based on context</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
-                      <div className="w-5 h-5 rounded-full border border-dashed border-[var(--accent)] flex items-center justify-center text-[var(--accent)] mt-0.5">◯</div>
+                      <div className="w-5 h-5 rounded-full border border-[var(--accent)] flex items-center justify-center text-[var(--accent)] mt-0.5">⟳</div>
                       <div>
-                        <p className="font-medium">Implement core calculation engine</p>
-                        <p className="text-sm text-[var(--muted)]">Planning to build the mathematical model with input validation</p>
+                        <p className="font-medium">Building context-aware code documentation</p>
+                        <p className="text-sm text-[var(--muted)]">Working on generating documentation for functions and classes</p>
                       </div>
                     </div>
                   </div>
@@ -2499,13 +2488,12 @@ export default function Portfolio() {
                     <h5 className="text-sm font-medium mb-2">Timeline</h5>
                     <div className="relative pt-1">
                       <div className="overflow-hidden h-2 mb-4 text-xs flex rounded bg-[var(--bg)]">
-                        <div style={{ width: "20%" }} className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-[var(--accent)]"></div>
+                        <div style={{ width: "65%" }} className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-[var(--accent)]"></div>
                       </div>
                       <div className="flex justify-between text-xs text-[var(--muted)]">
-                        <span>Research</span>
-                        <span>Design</span>
-                        <span>Development</span>
-                        <span>Testing</span>
+                        <span>Start</span>
+                        <span>Current</span>
+                        <span>MVP</span>
                       </div>
                     </div>
                   </div>
@@ -2522,13 +2510,13 @@ export default function Portfolio() {
                   <div className="relative z-10">
                     <h3 className="text-xl font-semibold mb-2">
                       <a 
-                        href="https://github.com/CodingFreeze/" 
+                        href="https://github.com/CodingFreeze/finance-dashboard" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="hover:underline text-inherit transition-colors group-hover:text-[var(--accent)]"
                         style={{ color: 'var(--text)' }}
                       >
-                        Operating System for 6502
+                        Personal Finance Dashboard
                       </a>
                     </h3>
                     <div className="flex items-center gap-2 mb-4">
@@ -2536,42 +2524,42 @@ export default function Portfolio() {
                       <span className="text-sm text-[var(--muted)]">Planning Phase</span>
                     </div>
                     <p className="text-sm text-[var(--muted)] mb-4">
-                      Developing a lightweight operating system for the MOS Technology 6502 microprocessor using Assembly and C, focusing on efficiency and minimalism.
+                      Developing a customizable dashboard for tracking personal finances, investments, and financial goals with interactive visualizations.
                     </p>
                   </div>
                   <div className="flex flex-wrap gap-2 mt-4 relative z-10">
-                    <span className="px-2 py-1 text-xs rounded-md bg-[var(--bg)] text-[var(--muted)] hover:bg-[var(--accent)] hover:text-white transition-colors duration-200">Assembly</span>
-                    <span className="px-2 py-1 text-xs rounded-md bg-[var(--bg)] text-[var(--muted)] hover:bg-[var(--accent)] hover:text-white transition-colors duration-200">C</span>
-                    <span className="px-2 py-1 text-xs rounded-md bg-[var(--bg)] text-[var(--muted)] hover:bg-[var(--accent)] hover:text-white transition-colors duration-200">Systems Programming</span>
+                    <span className="px-2 py-1 text-xs rounded-md bg-[var(--bg)] text-[var(--muted)] hover:bg-[var(--accent)] hover:text-white transition-colors duration-200">Next.js</span>
+                    <span className="px-2 py-1 text-xs rounded-md bg-[var(--bg)] text-[var(--muted)] hover:bg-[var(--accent)] hover:text-white transition-colors duration-200">D3.js</span>
+                    <span className="px-2 py-1 text-xs rounded-md bg-[var(--bg)] text-[var(--muted)] hover:bg-[var(--accent)] hover:text-white transition-colors duration-200">Firebase</span>
                   </div>
                 </div>
                 <div className="md:w-2/3 p-6">
                   <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-4 gap-2">
                     <h4 className="font-medium text-lg">Project Plan</h4>
                     <div className="text-sm px-3 py-1 rounded-full bg-[var(--accent)] bg-opacity-20 text-white font-medium whitespace-nowrap">
-                      Est. Completion: August 2025
+                      Est. Completion: Q4 2023
                     </div>
                   </div>
                   <div className="space-y-4">
                     <div className="flex items-start gap-3">
                       <div className="w-5 h-5 rounded-full bg-[var(--accent)] flex items-center justify-center text-white mt-0.5">✓</div>
                       <div>
-                        <p className="font-medium">Research 6502 architecture and limitations</p>
-                        <p className="text-sm text-[var(--muted)]">Studying the processor's instruction set, memory management, and I/O capabilities</p>
+                        <p className="font-medium">Research existing finance tools</p>
+                        <p className="text-sm text-[var(--muted)]">Analyzed strengths and weaknesses of popular personal finance applications</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
                       <div className="w-5 h-5 rounded-full bg-[var(--accent)] bg-opacity-50 flex items-center justify-center text-white mt-0.5">⟳</div>
                       <div>
-                        <p className="font-medium">Design kernel architecture and memory layout</p>
-                        <p className="text-sm text-[var(--muted)]">Planning core OS components, memory allocation, and process management</p>
+                        <p className="font-medium">Design UI mockups and user flows</p>
+                        <p className="text-sm text-[var(--muted)]">Creating wireframes and interactive prototypes in Figma</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-3">
                       <div className="w-5 h-5 rounded-full border border-dashed border-[var(--accent)] flex items-center justify-center text-[var(--accent)] mt-0.5">◯</div>
                       <div>
-                        <p className="font-medium">Implement bootloader and basic I/O routines</p>
-                        <p className="text-sm text-[var(--muted)]">Planning to write low-level system initialization and hardware interface code</p>
+                        <p className="font-medium">Set up Next.js project and authentication</p>
+                        <p className="text-sm text-[var(--muted)]">Planning to implement secure user authentication with NextAuth.js</p>
                       </div>
                     </div>
                   </div>
@@ -2580,13 +2568,13 @@ export default function Portfolio() {
                     <h5 className="text-sm font-medium mb-2">Timeline</h5>
                     <div className="relative pt-1">
                       <div className="overflow-hidden h-2 mb-4 text-xs flex rounded bg-[var(--bg)]">
-                        <div style={{ width: "15%" }} className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-[var(--accent)]"></div>
+                        <div style={{ width: "25%" }} className="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center bg-[var(--accent)]"></div>
                       </div>
                       <div className="flex justify-between text-xs text-[var(--muted)]">
-                        <span>Research</span>
-                        <span>Design</span>
+                        <span>Project Start</span>
+                        <span>Design Phase</span>
                         <span>Development</span>
-                        <span>Testing</span>
+                        <span>Launch</span>
                       </div>
                     </div>
                   </div>
@@ -3328,6 +3316,368 @@ export default function Portfolio() {
                       <h4 className="text-xl font-semibold mb-2">Travel</h4>
                       <p className="text-[var(--muted)]">Exploring diverse cultures, cuisines, and landscapes across the globe.</p>
                     </div>
+                  </motion.div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>
+        </motion.section>
+
+        <motion.section 
+          id="current-projects" 
+          className="min-h-[50vh] py-10 relative"
+          variants={fadeInVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          style={{
+            background: darkMode 
+              ? "linear-gradient(135deg, rgba(20,20,22,0.7) 0%, rgba(35,35,40,0.5) 50%, rgba(20,20,22,0.7) 100%)" 
+              : "linear-gradient(135deg, rgba(230,230,235,0.7) 0%, rgba(240,240,245,0.5) 50%, rgba(230,230,235,0.7) 100%)",
+            borderRadius: "16px",
+            padding: "2rem",
+              boxShadow: darkMode
+              ? "inset 0 0 30px rgba(0,0,0,0.3)"
+              : "inset 0 0 30px rgba(0,0,0,0.05)",
+            marginBottom: "2rem"
+          }}
+        >
+          <h2 className="text-4xl font-semibold mb-10"
+            style={{
+              background: "linear-gradient(90deg, var(--accent), #3498db, var(--accent))",
+              backgroundSize: "200% auto",
+              WebkitBackgroundClip: "text",
+              WebkitTextFillColor: "transparent",
+              animation: "var(--gradient-animation)"
+            }}
+          >
+            <a 
+              href="/notes" 
+            >
+              Coursework
+            </a>
+          </h2>
+          
+          {/* Tab Navigation */}
+          <div className="mb-8">
+            <div className="flex flex-wrap space-x-0 space-y-2 sm:space-y-0 sm:space-x-2 border-b border-[var(--divider)] pb-2">
+              <button 
+                className={`px-3 sm:px-4 py-2 font-medium rounded-t-lg flex items-center gap-1 sm:gap-2 text-sm sm:text-base ${activeCourseTab === 'completed' ? 'bg-[var(--secondary)] text-[var(--accent)]' : 'text-[var(--muted)] hover:text-[var(--text)]'}`}
+                onClick={() => setActiveCourseTab('completed')}
+              >
+                <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+                <span>Completed</span>
+              </button>
+              <button 
+                className={`px-3 sm:px-4 py-2 font-medium rounded-t-lg flex items-center gap-1 sm:gap-2 text-sm sm:text-base ${activeCourseTab === 'current' ? 'bg-[var(--secondary)] text-[var(--accent)]' : 'text-[var(--muted)] hover:text-[var(--text)]'}`}
+                onClick={() => setActiveCourseTab('current')}
+              >
+                <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>Current</span>
+              </button>
+              <button 
+                className={`px-3 sm:px-4 py-2 font-medium rounded-t-lg flex items-center gap-1 sm:gap-2 text-sm sm:text-base ${activeCourseTab === 'upcoming' ? 'bg-[var(--secondary)] text-[var(--accent)]' : 'text-[var(--muted)] hover:text-[var(--text)]'}`}
+                onClick={() => setActiveCourseTab('upcoming')}
+              >
+                <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
+                </svg>
+                <span>Upcoming</span>
+              </button>
+            </div>
+          </div>
+
+          {/* Tab Content */}
+          <div className="mt-6">
+            <AnimatePresence mode="wait">
+              {/* Completed Courses Tab Content */}
+              {activeCourseTab === 'completed' && (
+                <motion.div 
+                  key="completed"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6"
+                >
+                  {/* Course cards for Completed Courses */}
+                  <motion.div 
+                    className="bg-[var(--secondary)] p-6 rounded-lg h-[160px] flex flex-col"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <div className="flex justify-between items-start mb-2">
+                      <h4 className="text-xl font-medium">Advanced Machine Learning</h4>
+                      <div className="relative w-10 h-10 flex items-center justify-center bg-teal-500 bg-opacity-10 rounded-full">
+                        <svg className="w-6 h-6 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="px-2 py-0.5 text-xs rounded-full bg-blue-500 bg-opacity-20 text-blue-500 border border-blue-500 border-opacity-30">Theory</span>
+                      <span className="px-2 py-0.5 text-xs rounded-full bg-purple-500 bg-opacity-20 text-purple-500 border border-purple-500 border-opacity-30">Practical</span>
+                    </div>
+                    <p className="text-[var(--muted)] text-sm">Deep learning, neural networks, and advanced ML algorithms</p>
+                    <div className="mt-auto"></div>
+                  </motion.div>
+
+                  <motion.div 
+                    className="bg-[var(--secondary)] p-6 rounded-lg h-[160px] flex flex-col"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <div className="flex justify-between items-start mb-2">
+                      <h4 className="text-xl font-medium">Cloud Computing</h4>
+                      <div className="relative w-10 h-10 flex items-center justify-center bg-teal-500 bg-opacity-10 rounded-full">
+                        <svg className="w-6 h-6 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="px-2 py-0.5 text-xs rounded-full bg-green-500 bg-opacity-20 text-green-500 border border-green-500 border-opacity-30">DevOps</span>
+                      <span className="px-2 py-0.5 text-xs rounded-full bg-purple-500 bg-opacity-20 text-purple-500 border border-purple-500 border-opacity-30">Practical</span>
+                    </div>
+                    <p className="text-[var(--muted)] text-sm">AWS, Azure, and cloud architecture principles</p>
+                    <div className="mt-auto"></div>
+                  </motion.div>
+
+                  <motion.div 
+                    className="bg-[var(--secondary)] p-6 rounded-lg h-[160px] flex flex-col"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <div className="flex justify-between items-start mb-2">
+                      <h4 className="text-xl font-medium">Distributed Systems</h4>
+                      <div className="relative w-10 h-10 flex items-center justify-center bg-teal-500 bg-opacity-10 rounded-full">
+                        <svg className="w-6 h-6 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="px-2 py-0.5 text-xs rounded-full bg-blue-500 bg-opacity-20 text-blue-500 border border-blue-500 border-opacity-30">Theory</span>
+                      <span className="px-2 py-0.5 text-xs rounded-full bg-orange-500 bg-opacity-20 text-orange-500 border border-orange-500 border-opacity-30">Research</span>
+                    </div>
+                    <p className="text-[var(--muted)] text-sm">System design, scalability, and distributed computing</p>
+                    <div className="mt-auto"></div>
+                  </motion.div>
+
+                  <motion.div 
+                    className="bg-[var(--secondary)] p-6 rounded-lg h-[160px] flex flex-col"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <div className="flex justify-between items-start mb-2">
+                      <h4 className="text-xl font-medium">Database Management</h4>
+                      <div className="relative w-10 h-10 flex items-center justify-center bg-teal-500 bg-opacity-10 rounded-full">
+                        <svg className="w-6 h-6 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="px-2 py-0.5 text-xs rounded-full bg-purple-500 bg-opacity-20 text-purple-500 border border-purple-500 border-opacity-30">Practical</span>
+                      <span className="px-2 py-0.5 text-xs rounded-full bg-green-500 bg-opacity-20 text-green-500 border border-green-500 border-opacity-30">DevOps</span>
+                    </div>
+                    <p className="text-[var(--muted)] text-sm">SQL, NoSQL, and database optimization techniques</p>
+                    <div className="mt-auto"></div>
+                  </motion.div>
+                </motion.div>
+              )}
+              
+              {/* Current Courses Tab Content */}
+              {activeCourseTab === 'current' && (
+                <motion.div 
+                  key="current"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6"
+                >
+                  {/* Course cards for Current Courses */}
+                  <motion.div 
+                    className="bg-[var(--secondary)] p-6 rounded-lg h-[160px] flex flex-col"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <div className="flex justify-between items-start mb-2">
+                      <h4 className="text-xl font-medium">Web Development</h4>
+                      <div className="relative w-10 h-10 flex items-center justify-center bg-teal-500 bg-opacity-10 rounded-full">
+                        <svg className="w-6 h-6 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="px-2 py-0.5 text-xs rounded-full bg-purple-500 bg-opacity-20 text-purple-500 border border-purple-500 border-opacity-30">Practical</span>
+                      <span className="px-2 py-0.5 text-xs rounded-full bg-blue-500 bg-opacity-20 text-blue-500 border border-blue-500 border-opacity-30">Frontend</span>
+                    </div>
+                    <p className="text-[var(--muted)] text-sm">Full-stack development with modern frameworks and tools</p>
+                    <div className="mt-auto"></div>
+                  </motion.div>
+
+                  <motion.div 
+                    className="bg-[var(--secondary)] p-6 rounded-lg h-[160px] flex flex-col"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <div className="flex justify-between items-start mb-2">
+                      <h4 className="text-xl font-medium">Algorithm Design</h4>
+                      <div className="relative w-10 h-10 flex items-center justify-center bg-teal-500 bg-opacity-10 rounded-full">
+                        <svg className="w-6 h-6 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="px-2 py-0.5 text-xs rounded-full bg-blue-500 bg-opacity-20 text-blue-500 border border-blue-500 border-opacity-30">Theory</span>
+                      <span className="px-2 py-0.5 text-xs rounded-full bg-yellow-500 bg-opacity-20 text-yellow-500 border border-yellow-500 border-opacity-30">Algorithms</span>
+                    </div>
+                    <p className="text-[var(--muted)] text-sm">Advanced algorithms and optimization techniques</p>
+                    <div className="mt-auto"></div>
+                  </motion.div>
+
+                  <motion.div 
+                    className="bg-[var(--secondary)] p-6 rounded-lg h-[160px] flex flex-col"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <div className="flex justify-between items-start mb-2">
+                      <h4 className="text-xl font-medium">Computer Networks</h4>
+                      <div className="relative w-10 h-10 flex items-center justify-center bg-teal-500 bg-opacity-10 rounded-full">
+                        <svg className="w-6 h-6 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="px-2 py-0.5 text-xs rounded-full bg-blue-500 bg-opacity-20 text-blue-500 border border-blue-500 border-opacity-30">Theory</span>
+                      <span className="px-2 py-0.5 text-xs rounded-full bg-green-500 bg-opacity-20 text-green-500 border border-green-500 border-opacity-30">DevOps</span>
+                    </div>
+                    <p className="text-[var(--muted)] text-sm">Network protocols, security, and distributed systems</p>
+                    <div className="mt-auto"></div>
+                  </motion.div>
+
+                  <motion.div 
+                    className="bg-[var(--secondary)] p-6 rounded-lg h-[160px] flex flex-col"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <div className="flex justify-between items-start mb-2">
+                      <h4 className="text-xl font-medium">Artificial Intelligence</h4>
+                      <div className="relative w-10 h-10 flex items-center justify-center bg-teal-500 bg-opacity-10 rounded-full">
+                        <svg className="w-6 h-6 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="px-2 py-0.5 text-xs rounded-full bg-blue-500 bg-opacity-20 text-blue-500 border border-blue-500 border-opacity-30">Theory</span>
+                      <span className="px-2 py-0.5 text-xs rounded-full bg-teal-500 bg-opacity-20 text-teal-500 border border-teal-500 border-opacity-30">ML/AI</span>
+                    </div>
+                    <p className="text-[var(--muted)] text-sm">AI Systems, natural language processing, and computer vision</p>
+                    <div className="mt-auto"></div>
+                  </motion.div>
+                </motion.div>
+              )}
+              
+              {/* Upcoming Courses Tab Content */}
+              {activeCourseTab === 'upcoming' && (
+                <motion.div 
+                  key="upcoming"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
+                >
+                  {/* Course cards for Upcoming Courses */}
+                  <motion.div 
+                    className="bg-[var(--secondary)] p-6 rounded-lg h-[160px] flex flex-col"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <div className="flex justify-between items-start mb-2">
+                      <h4 className="text-xl font-medium">Cybersecurity</h4>
+                      <div className="relative w-10 h-10 flex items-center justify-center bg-teal-500 bg-opacity-10 rounded-full">
+                        <svg className="w-6 h-6 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="px-2 py-0.5 text-xs rounded-full bg-red-500 bg-opacity-20 text-red-500 border border-red-500 border-opacity-30">Security</span>
+                      <span className="px-2 py-0.5 text-xs rounded-full bg-purple-500 bg-opacity-20 text-purple-500 border border-purple-500 border-opacity-30">Practical</span>
+                    </div>
+                    <p className="text-[var(--muted)] text-sm">Network security, ethical hacking, and threat analysis</p>
+                    <div className="mt-auto"></div>
+                  </motion.div>
+
+                  <motion.div 
+                    className="bg-[var(--secondary)] p-6 rounded-lg h-[160px] flex flex-col"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <div className="flex justify-between items-start mb-2">
+                      <h4 className="text-xl font-medium">Mobile Development</h4>
+                      <div className="relative w-10 h-10 flex items-center justify-center bg-teal-500 bg-opacity-10 rounded-full">
+                        <svg className="w-6 h-6 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="px-2 py-0.5 text-xs rounded-full bg-purple-500 bg-opacity-20 text-purple-500 border border-purple-500 border-opacity-30">Practical</span>
+                      <span className="px-2 py-0.5 text-xs rounded-full bg-blue-500 bg-opacity-20 text-blue-500 border border-blue-500 border-opacity-30">Frontend</span>
+                    </div>
+                    <p className="text-[var(--muted)] text-sm">iOS, Android, and cross-platform app development</p>
+                    <div className="mt-auto"></div>
+                  </motion.div>
+
+                  <motion.div 
+                    className="bg-[var(--secondary)] p-6 rounded-lg h-[160px] flex flex-col"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <div className="flex justify-between items-start mb-2">
+                      <h4 className="text-xl font-medium">Game Development</h4>
+                      <div className="relative w-10 h-10 flex items-center justify-center bg-teal-500 bg-opacity-10 rounded-full">
+                        <svg className="w-6 h-6 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="px-2 py-0.5 text-xs rounded-full bg-purple-500 bg-opacity-20 text-purple-500 border border-purple-500 border-opacity-30">Practical</span>
+                      <span className="px-2 py-0.5 text-xs rounded-full bg-yellow-500 bg-opacity-20 text-yellow-500 border border-yellow-500 border-opacity-30">Graphics</span>
+                    </div>
+                    <p className="text-[var(--muted)] text-sm">Graphics programming, game engines, and interactive design</p>
+                    <div className="mt-auto"></div>
+                  </motion.div>
+
+                  <motion.div 
+                    className="bg-[var(--secondary)] p-6 rounded-lg h-[160px] flex flex-col"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <div className="flex justify-between items-start mb-2">
+                      <h4 className="text-xl font-medium">Blockchain Technology</h4>
+                      <div className="relative w-10 h-10 flex items-center justify-center bg-teal-500 bg-opacity-10 rounded-full">
+                        <svg className="w-6 h-6 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="flex items-center gap-2 mb-2">
+                      <span className="px-2 py-0.5 text-xs rounded-full bg-blue-500 bg-opacity-20 text-blue-500 border border-blue-500 border-opacity-30">Theory</span>
+                      <span className="px-2 py-0.5 text-xs rounded-full bg-amber-500 bg-opacity-20 text-amber-500 border border-amber-500 border-opacity-30">Blockchain</span>
+                    </div>
+                    <p className="text-[var(--muted)] text-sm">Cryptocurrency, smart contracts, and decentralized applications</p>
+                    <div className="mt-auto"></div>
                   </motion.div>
                 </motion.div>
               )}

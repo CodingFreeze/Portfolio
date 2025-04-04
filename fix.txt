@@ -1,0 +1,3 @@
+</motion.section>
+
+<motion.section id="current-projects" className="min-h-[50vh] py-10 relative" variants={fadeInVariants} initial="hidden" whileInView="visible" viewport={{ once: true }} style={{

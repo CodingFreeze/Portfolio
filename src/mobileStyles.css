@@ -60,6 +60,33 @@
     align-items: center;
     width: 100%;
   }
+  
+  /* Skills slideshow mobile improvements */
+  #skills .flex-shrink-0 {
+    width: 100% !important; /* Full width on mobile */
+  }
+  
+  #skills .flex.w-full.gap-6 {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 1rem !important;
+  }
+  
+  #skills .overflow-hidden {
+    padding: 0 1.5rem !important; /* Reduce horizontal padding */
+  }
+  
+  #skills .rounded-full {
+    padding: 0.5rem !important; /* Smaller navigation buttons */
+  }
+  
+  #skills h3 {
+    font-size: 14px !important; /* Slightly smaller title font */
+  }
+  
+  #skills .min-h-\[220px\] {
+    min-height: 200px !important; /* Slightly reduced minimum height */
+  }
 }
 
 /* Specific fixes for project section buttons */
@@ -130,5 +157,38 @@
   #projects h4.font-medium {
     width: 100%;
     text-align: center;
+  }
+  
+  /* Make the skill cards responsive in groups */
+  #skills .w-1\/4 {
+    width: 45% !important; /* Show 2 per row on small devices with better spacing */
+    padding: 0.5rem !important;
+    margin-bottom: 1rem !important;
+  }
+  
+  #skills .flex.w-full.gap-6 {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 0.75rem !important;
+  }
+  
+  #skills .min-h-\[220px\] {
+    min-height: 180px !important; /* Further reduce height on small screens */
+  }
+}
+
+/* Make the skill cards responsive */
+@media (max-width: 480px) {
+  #skills .w-1\/4 {
+    width: 100% !important; /* Full width on very small devices */
+    margin-bottom: 0.75rem !important;
+  }
+  
+  #skills .flex.w-full.gap-6 {
+    grid-template-columns: 1fr !important;
+  }
+  
+  #skills .min-h-\[220px\] {
+    min-height: 150px !important; /* Further reduce height on very small screens */
   }
 } 
