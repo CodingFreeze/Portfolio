@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, viewport-fit=cover" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=5, viewport-fit=cover" />
     
     <title>Abdullah Rana | CS + Math</title>
     
@@ -53,6 +53,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-title" content="Abdullah Rana" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="format-detection" content="telephone=no">
     
     <style>
       /* Mobile specific styles */
@@ -60,6 +61,16 @@
         /* General responsive adjustments */
         body {
           overflow-x: hidden;
+          width: 100%;
+          max-width: 100vw;
+          position: relative;
+        }
+        
+        /* Ensure progress bar doesn't extend beyond screen */
+        .fixed.top-0.left-0.right-0 {
+          width: 100% !important;
+          max-width: 100vw !important;
+          overflow: hidden !important;
         }
         
         /* Project card adjustments */

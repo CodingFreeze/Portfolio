@@ -63,7 +63,7 @@ const TiltCard = ({ children, className }) => {
 const RenderSkillCard = ({ skill, index, slideIndex }) => {
   return (
     <motion.div 
-      className="w-1/4 flex-shrink-0"
+      className="w-full max-w-xs mx-auto flex-shrink-0"
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{ 
@@ -165,7 +165,7 @@ const RenderSkillCard = ({ skill, index, slideIndex }) => {
 const SkillCard = ({ skill, index, slideIndex }) => {
   return (
     <motion.div 
-      className="h-full"
+      className="h-full w-full max-w-xs mx-auto"
       initial={{ opacity: 0, y: 15 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ 
@@ -463,8 +463,9 @@ export default function Portfolio() {
   // Enhanced scroll progress tracking for smoother animation
   const { scrollYProgress } = useScroll({
     offset: ["start start", "end end"],
-    smooth: 0.1,  // Reduced from 0.5 for better performance
-    layoutEffect: false
+    smooth: 0.05,  // Reduced for better mobile performance
+    layoutEffect: false,
+    container: typeof window !== 'undefined' ? window : undefined
   });
   
   const portfolioRef = useRef(null);
@@ -514,6 +515,7 @@ export default function Portfolio() {
   // Add debounced scroll handler to reduce calculations
   useEffect(() => {
     let scrollTimeout;
+    let lastScrollPos = 0;
     
     const handleScroll = () => {
       if (scrollTimeout) {
@@ -521,7 +523,19 @@ export default function Portfolio() {
       }
       
       scrollTimeout = window.requestAnimationFrame(() => {
-        // Any scroll-dependent state updates here
+        // Force update the progress indicator on mobile
+        const currentScrollPos = window.scrollY;
+        const scrollDirection = currentScrollPos > lastScrollPos ? 'down' : 'up';
+        lastScrollPos = currentScrollPos;
+        
+        // On mobile, ensure the indicator is visible
+        if (window.innerWidth <= 768) {
+          const progressIndicator = document.querySelector('.fixed.top-0.left-0.right-0');
+          if (progressIndicator) {
+            progressIndicator.style.visibility = 'visible';
+            progressIndicator.style.opacity = '1';
+          }
+        }
       });
     };
     
@@ -1143,12 +1157,20 @@ export default function Portfolio() {
       transition={{ duration: 0.8, ease: "easeInOut" }}
                 >
       {/* Scroll Progress Indicator */}
-      <div className="fixed top-0 left-0 right-0 h-1 bg-gray-700 bg-opacity-20 z-[9999]">
-                  <motion.div
+      <div className="fixed top-0 left-0 right-0 h-1 bg-gray-700 bg-opacity-20 z-[9999] overflow-hidden w-full max-w-[100vw]">
+        <motion.div
           className="h-full bg-[var(--accent)]"
-                    style={{
+          style={{
             scaleX: scrollYProgress,
-            transformOrigin: "left"
+            transformOrigin: "left",
+            width: "100%",
+            willChange: "transform"
+          }}
+          transition={{
+            type: "spring",
+            stiffness: 300,
+            damping: 30,
+            restDelta: 0.001
           }}
         />
       </div>
@@ -1321,13 +1343,13 @@ export default function Portfolio() {
         <AnimatePresence>
           {isMenuOpen && (
             <motion.div 
-              className="fixed inset-0 bg-[var(--bg)] z-40 flex items-center justify-center lg:hidden"
+              className="fixed inset-0 bg-[var(--bg)] z-40 flex items-center justify-center lg:hidden overflow-auto"
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               transition={{ duration: 0.3 }}
             >
-              <div className="flex flex-col items-center gap-6 text-xl">
+              <div className="flex flex-col items-center gap-6 text-xl py-16">
                 {/* Add clickable [AR] logo in mobile menu */}
                 <div className="mb-6 text-3xl font-bold text-[#68A1B1]">
                   <a 
@@ -1576,7 +1598,7 @@ export default function Portfolio() {
             <div className="flex flex-col md:flex-row items-center gap-6 sm:gap-10">
               <div className="flex-1">
                 <p className="text-base sm:text-lg leading-relaxed text-[var(--muted)]">
-            I'm Abdullah, a Computer Science and Mathematics student at the University of Virginia with a passion for systems, algorithms, and the intersection of tech and finance. I’m driven by curiosity—whether it’s understanding how operating systems work under the hood or exploring how technology can be implemented in financial markets. Outside of coding, I enjoy good design, thoughtful writing, and exploring advanced mathematics.
+            I'm Abdullah, a Computer Science and Mathematics student at the University of Virginia with a passion for systems, algorithms, and the intersection of tech and finance. I'm driven by curiosity—whether it's understanding how operating systems work under the hood or exploring how technology can be implemented in financial markets. Outside of coding, I enjoy good design, thoughtful writing, and exploring advanced mathematics.
 
           </p>
               </div>
@@ -1727,7 +1749,7 @@ export default function Portfolio() {
                   className="group h-auto transform transition-transform duration-300 hover:scale-102 hover:-translate-y-1"
                 >
                   <div 
-                    className="h-full overflow-hidden relative rounded-lg border border-[var(--accent)] border-opacity-20 shadow-sm hover:shadow-lg bg-[var(--secondary)] transition-all duration-300"
+                    className="relative rounded-xl overflow-hidden shadow-md h-full bg-[var(--secondary)]"
                   >
                     {/* Gradient background */}
                     <div className="absolute inset-0 bg-[var(--accent)] opacity-5 z-0"></div>
@@ -2199,13 +2221,13 @@ export default function Portfolio() {
           </div>
 
           {/* Skills Slideshow - Grid-based with fade transitions */}
-          <div className="relative mb-10 max-w-5xl mx-auto px-10">
+          <div className="relative mb-10 max-w-5xl mx-auto px-4 sm:px-10 skills-section-container">
             {/* Navigation arrows with improved hover effect - better positioning */}
             <button 
               onClick={() => setSkillsIndex(prev => (prev - 1 + Math.ceil(skills.length / 4)) % Math.ceil(skills.length / 4))}
               className="absolute left-0 top-1/2 transform -translate-y-1/2 z-20 bg-[var(--accent)] text-white rounded-full p-3 shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl"
               aria-label="Previous skills"
-              style={{ left: "-0px", top: "40%" }}
+              style={{ left: "5px", top: "40%" }}
             >
               <FaChevronLeft className="w-[11.2px] h-[11.2px]" />
             </button>
@@ -2214,7 +2236,7 @@ export default function Portfolio() {
               onClick={() => setSkillsIndex(prev => (prev + 1) % Math.ceil(skills.length / 4))}
               className="absolute right-0 top-1/2 transform -translate-y-1/2 z-20 bg-[var(--accent)] text-white rounded-full p-3 shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-xl"
               aria-label="Next skills"
-              style={{ right: "-0px", top: "40%" }}
+              style={{ right: "5px", top: "40%" }}
             >
               <FaChevronRight className="w-[11.2px] h-[11.2px]" />
             </button>
@@ -2222,16 +2244,16 @@ export default function Portfolio() {
             
             {/* Grid-based skills display - more compact sizing */}
             <div 
-              className="px-6 skills-slider-container" 
+              className="px-6 md:px-6 skills-slider-container mx-auto" 
               role="region" 
               aria-label="Skills showcase"
               aria-roledescription="carousel"
-              style={{ minHeight: "220px", maxHeight: "900px" }}
+              style={{ minHeight: "220px", maxHeight: "900px", width: "100%" }}
             >
               {/* Panel 1 - Grid for skills 0-3 */}
               {skillsIndex === 0 && (
                 <motion.div 
-                  className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 h-full"
+                  className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 h-full place-items-center"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
@@ -2252,7 +2274,7 @@ export default function Portfolio() {
               {/* Panel 2 - Grid for skills 4-7 */}
               {skillsIndex === 1 && (
                 <motion.div 
-                  className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 h-full"
+                  className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 h-full place-items-center"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
@@ -2273,7 +2295,7 @@ export default function Portfolio() {
               {/* Panel 3 - Grid for skills 8-11 */}
               {skillsIndex === 2 && (
                 <motion.div 
-                  className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 h-full"
+                  className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 h-full place-items-center"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
@@ -2294,7 +2316,7 @@ export default function Portfolio() {
               {/* Panel 4 - Grid for skills 12-15 */}
               {skillsIndex === 3 && (
                 <motion.div 
-                  className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 h-full"
+                  className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 h-full place-items-center"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                   exit={{ opacity: 0 }}
