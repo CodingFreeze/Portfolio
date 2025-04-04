@@ -9,7 +9,7 @@ import {
   FaUsers, FaSync, FaBolt, FaPalette, FaLeaf, FaUserAstronaut,
   FaMusic, FaCamera, FaBookOpen, FaHiking, FaChess, FaGamepad,
   FaGlobeAmericas, FaGit, FaJava, FaJs, FaChevronLeft, FaChevronRight,
-  FaCodeBranch, FaNetworkWired, FaSitemap
+  FaCodeBranch, FaNetworkWired, FaSitemap, FaMicrochip, FaChartLine
 } from 'react-icons/fa';
 import { SiTypescript, SiTailwindcss, SiC, SiCplusplus, SiD3Dotjs, SiSvelte, SiNumpy, SiPandas } from 'react-icons/si';
 import { Link } from 'react-router-dom';
@@ -688,20 +688,20 @@ export default function Portfolio() {
       learned: "Developed a practical understanding of threads, locks, and deadlocks, improved proficiency with Java concurrency APIs and event-driven architectures, and explored D3.js for data-driven UI and built modular simulation tools across platforms."
     },
     {
-      title: "Crypto Portfolio Tracker",
-      description: "Monitor cryptocurrency investments in real-time with price alerts and performance analytics.",
-      github: "https://github.com/CodingFreeze/crypto-tracker",
-      demo: "https://crypto-tracker-app.vercel.app",
-      techStack: ["Next.js", "TypeScript", "CoinGecko API", "Chart.js"],
-      learned: "Real-time data visualization, API rate limiting, and secure user authentication."
+      title: "Project 3 (Coming Soon)",
+      description: "Details about this project will be available soon.",
+      github: "https://github.com/CodingFreeze",
+      demo: "#",
+      techStack: ["TBA"],
+      learned: "Project details and technologies will be updated soon."
     },
     {
-      title: "E-Commerce Platform",
-      description: "A full-featured online store with product listings, shopping cart, and payment processing.",
-      github: "https://github.com/CodingFreeze/ecommerce-site",
-      demo: "https://ecommerce-site-demo.vercel.app",
-      techStack: ["React", "Firebase", "Stripe", "Redux"],
-      learned: "State management patterns, payment gateway integration, and inventory tracking systems."
+      title: "Project 4 (Coming Soon)",
+      description: "Another exciting project in coming soon.",
+      github: "https://github.com/CodingFreeze",
+      demo: "#",
+      techStack: ["TBA"],
+      learned: "Project goals and implementation details will be updated soon."
     },
   ];
 
@@ -806,16 +806,16 @@ export default function Portfolio() {
 
   const experiences = [
     {
-      title: "Software Engineering Intern",
-      company: "[Company Name]",
-      period: "Summer 2024",
-      description: "Description of your internship and key achievements."
+      title: "Software Engineer Intern",
+      company: "Next Scarf",
+      period: "May 2024 – Aug 2024",
+      description: "Built a custom inventory management system that automated stock tracking and reduced manual data entry by 80%. Implemented real-time inventory monitoring with automated reorder alerts, decreasing stockouts by 30%. Developed data pipelines that integrated sales and inventory data, improving accuracy by 25% and saving 15+ hours of manual work per week."
     },
     {
       title: "Data Science Intern",
-      company: "[Company Name]",
-      period: "Summer 2023",
-      description: "Description of your data science internship role."
+      company: "AM Traders LLC",
+      period: "Jun 2022 – Aug 2023",
+      description: "Managed and analyzed $30,000+ in inventory across 150+ SKUs, reducing overstock by 20%. Created predictive sales models using Python and Excel, which improved forecasting accuracy by 25% and reduced stockouts by 15%. Built visual dashboards and reports that accelerated restocking decisions by 30%."
     }
   ];
 
@@ -1576,7 +1576,8 @@ export default function Portfolio() {
             <div className="flex flex-col md:flex-row items-center gap-6 sm:gap-10">
               <div className="flex-1">
                 <p className="text-base sm:text-lg leading-relaxed text-[var(--muted)]">
-            I'm a Computer Science and Mathematics student at the University of Virginia, passionate about software engineering, fintech, and AI. I enjoy building impactful tech and continuously learning new things.
+            I'm Abdullah, a Computer Science and Mathematics student at the University of Virginia with a passion for systems, algorithms, and the intersection of tech and finance. I’m driven by curiosity—whether it’s understanding how operating systems work under the hood or exploring how technology can be implemented in financial markets. Outside of coding, I enjoy good design, thoughtful writing, and exploring advanced mathematics.
+
           </p>
               </div>
               
@@ -1822,15 +1823,15 @@ export default function Portfolio() {
                   <ul className="text-sm text-[var(--muted)] space-y-2">
                     <li className="flex items-center gap-2">
                       <FaLaptopCode className="w-3.5 h-3.5 text-white" />
-                      <span>Full-stack web development</span>
+                      <span>Low level systems programming</span>
                     </li>
                     <li className="flex items-center gap-2">
-                      <FaChartBar className="w-3.5 h-3.5 text-white" />
-                      <span>Data visualization</span>
+                      <FaChartLine className="w-3.5 h-3.5 text-white" />
+                      <span>Financial modeling & visualization</span>
                     </li>
                     <li className="flex items-center gap-2">
-                      <FaBrain className="w-3.5 h-3.5 text-white" />
-                      <span>Machine learning applications</span>
+                      <FaMicrochip className="w-3.5 h-3.5 text-white" />
+                      <span>Operating systems & embedded systems</span>
                     </li>
                   </ul>
                 </div>
@@ -1845,38 +1846,38 @@ export default function Portfolio() {
                   <ul className="text-sm text-[var(--muted)] space-y-2">
                     <li className="flex items-center gap-2">
                       <FaReact className="w-3.5 h-3.5 text-white" />
-                      <span>Modern JavaScript frameworks</span>
+                      <span>Interactive data visualization</span>
                     </li>
                     <li className="flex items-center gap-2">
-                      <FaServer className="w-3.5 h-3.5 text-white" />
-                      <span>RESTful & GraphQL APIs</span>
+                      <SiC className="w-3.5 h-3.5 text-white" />
+                      <span>Systems programming (C/Assembly)</span>
                     </li>
                     <li className="flex items-center gap-2">
-                      <FaCloud className="w-3.5 h-3.5 text-white" />
-                      <span>Cloud deployment</span>
+                      <SiD3Dotjs className="w-3.5 h-3.5 text-white" />
+                      <span>Advanced data visualization tools</span>
                     </li>
                   </ul>
                 </div>
                 
                 <div className="bg-[var(--bg)] p-4 rounded-lg">
                   <div className="flex justify-between items-start mb-2">
-                    <h4 className="font-medium">Approach</h4>
+                    <h4 className="font-medium">Current Projects</h4>
                     <div className="w-8 h-8 flex items-center justify-center rounded-full bg-[var(--accent)]">
                       <FaRocket className="w-4 h-4 text-white" />
                     </div>
                   </div>
                   <ul className="text-sm text-[var(--muted)] space-y-2">
                     <li className="flex items-center gap-2">
-                      <FaUsers className="w-3.5 h-3.5 text-white" />
-                      <span>User-centered design</span>
+                      <FaChartLine className="w-3.5 h-3.5 text-white" />
+                      <span>Black-Scholes Model Visualizer</span>
                     </li>
                     <li className="flex items-center gap-2">
-                      <FaSync className="w-3.5 h-3.5 text-white" />
-                      <span>Iterative development</span>
+                      <FaMicrochip className="w-3.5 h-3.5 text-white" />
+                      <span>Operating System for 6502</span>
                     </li>
                     <li className="flex items-center gap-2">
-                      <FaBolt className="w-3.5 h-3.5 text-white" />
-                      <span>Performance optimization</span>
+                      <FaCode className="w-3.5 h-3.5 text-white" />
+                      <span>Algorithm Visualization Tools</span>
                     </li>
                   </ul>
                 </div>
@@ -1896,7 +1897,7 @@ export default function Portfolio() {
                 </motion.a>
                 
                 <motion.a 
-                  href="#contact" 
+                  href="#about" 
                   className="flex items-center gap-2 bg-[var(--accent)] text-white hover:opacity-90 transition-opacity text-sm px-4 py-2 rounded-md"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
@@ -2034,7 +2035,7 @@ export default function Portfolio() {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              My professional journey and roles in the tech industry
+              My professional journey and technical roles 
             </motion.p>
           </div>
 
@@ -2075,23 +2076,6 @@ export default function Portfolio() {
                         </div>
                         <p className="text-[var(--muted)]">{exp.description}</p>
                       </div>
-                      
-                      <div className="flex gap-2 mt-4 flex-wrap">
-                        <motion.button 
-                          className="flex items-center gap-2 bg-transparent hover:bg-[var(--accent)] hover:text-white transition-colors text-xs px-3 py-1 rounded-md border border-[var(--accent)] text-[var(--accent)]"
-                          whileHover={{ scale: 1.05 }}
-                          whileTap={{ scale: 0.95 }}
-                        >
-                          View Details
-                        </motion.button>
-                        <motion.button 
-                          className="flex items-center gap-2 bg-transparent hover:bg-[var(--accent)] hover:text-white transition-colors text-xs px-3 py-1 rounded-md border border-[var(--accent)] border-opacity-30 text-[var(--muted)]"
-                          whileHover={{ scale: 1.05 }}
-                          whileTap={{ scale: 0.95 }}
-                        >
-                          Related Projects
-                        </motion.button>
-                      </div>
                     </div>
                   </div>
                 </motion.div>
@@ -2126,7 +2110,7 @@ export default function Portfolio() {
               
               <div className="flex flex-wrap gap-3">
                 <motion.a 
-                  href="mailto:youremail@example.com" 
+                  href="mailto:abdullahranaofc@gmail.com" 
                   className="flex items-center gap-2 bg-gradient-to-r from-[var(--accent)] to-blue-500 text-white font-medium hover:opacity-90 transition-opacity px-4 py-2 rounded-md"
                   whileHover={{ scale: 1.05, y: -2 }}
                   whileTap={{ scale: 0.95 }}
@@ -2678,86 +2662,86 @@ export default function Portfolio() {
                 >
                   {/* Course cards for Completed Courses */}
                   <motion.div 
-                    className="bg-[var(--secondary)] p-6 rounded-lg h-[160px] flex flex-col"
+                    className="bg-[var(--secondary)] p-6 rounded-lg h-[180px] flex flex-col border border-[var(--accent)] border-opacity-20"
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.2 }}
                   >
                     <div className="flex justify-between items-start mb-2">
-                      <h4 className="text-xl font-medium">Advanced Machine Learning</h4>
-                      <div className="relative w-10 h-10 flex items-center justify-center bg-teal-500 bg-opacity-10 rounded-full">
+                      <h4 className="text-lg font-medium pr-2">Discrete Math</h4>
+                      <div className="relative w-10 h-10 flex-shrink-0 flex items-center justify-center bg-teal-500 bg-opacity-10 rounded-full">
+                        <svg className="w-6 h-6 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 20l4-16m2 16l4-16M6 9h14M4 15h14" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="flex flex-wrap items-center gap-2 mb-2">
+                      <span className="px-2 py-0.5 text-xs rounded-full bg-blue-500 bg-opacity-20 text-blue-500 border border-blue-500 border-opacity-30">Theory</span>
+                      <span className="px-2 py-0.5 text-xs rounded-full bg-yellow-500 bg-opacity-20 text-yellow-500 border border-yellow-500 border-opacity-30">Mathematics</span>
+                    </div>
+                    <p className="text-[var(--muted)] text-sm">Set theory, logic, combinatorics basics</p>
+                    <div className="mt-auto"></div>
+                  </motion.div>
+
+                  <motion.div 
+                    className="bg-[var(--secondary)] p-6 rounded-lg h-[180px] flex flex-col border border-[var(--accent)] border-opacity-20"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <div className="flex justify-between items-start mb-2">
+                      <h4 className="text-lg font-medium pr-2">Data Structures I</h4>
+                      <div className="relative w-10 h-10 flex-shrink-0 flex items-center justify-center bg-teal-500 bg-opacity-10 rounded-full">
+                        <svg className="w-6 h-6 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="flex flex-wrap items-center gap-2 mb-2">
+                      <span className="px-2 py-0.5 text-xs rounded-full bg-purple-500 bg-opacity-20 text-purple-500 border border-purple-500 border-opacity-30">Practical</span>
+                      <span className="px-2 py-0.5 text-xs rounded-full bg-yellow-500 bg-opacity-20 text-yellow-500 border border-yellow-500 border-opacity-30">Mathematics</span>
+                    </div>
+                    <p className="text-[var(--muted)] text-sm">Data structures and algorithm analysis</p>
+                    <div className="mt-auto"></div>
+                  </motion.div>
+
+                  <motion.div 
+                    className="bg-[var(--secondary)] p-6 rounded-lg h-[180px] flex flex-col border border-[var(--accent)] border-opacity-20"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <div className="flex justify-between items-start mb-2">
+                      <h4 className="text-lg font-medium pr-2">OS Fundamentals</h4>
+                      <div className="relative w-10 h-10 flex-shrink-0 flex items-center justify-center bg-teal-500 bg-opacity-10 rounded-full">
                         <svg className="w-6 h-6 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
                         </svg>
                       </div>
                     </div>
-                    <div className="flex items-center gap-2 mb-2">
+                    <div className="flex flex-wrap items-center gap-2 mb-2">
                       <span className="px-2 py-0.5 text-xs rounded-full bg-blue-500 bg-opacity-20 text-blue-500 border border-blue-500 border-opacity-30">Theory</span>
-                      <span className="px-2 py-0.5 text-xs rounded-full bg-purple-500 bg-opacity-20 text-purple-500 border border-purple-500 border-opacity-30">Practical</span>
+                      <span className="px-2 py-0.5 text-xs rounded-full bg-green-500 bg-opacity-20 text-green-500 border border-green-500 border-opacity-30">Systems</span>
                     </div>
-                    <p className="text-[var(--muted)] text-sm">Deep learning, neural networks, and advanced ML algorithms</p>
+                    <p className="text-[var(--muted)] text-sm">Computer architecture and memory</p>
                     <div className="mt-auto"></div>
                   </motion.div>
 
                   <motion.div 
-                    className="bg-[var(--secondary)] p-6 rounded-lg h-[160px] flex flex-col"
+                    className="bg-[var(--secondary)] p-6 rounded-lg h-[180px] flex flex-col border border-[var(--accent)] border-opacity-20"
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.2 }}
                   >
                     <div className="flex justify-between items-start mb-2">
-                      <h4 className="text-xl font-medium">Cloud Computing</h4>
-                      <div className="relative w-10 h-10 flex items-center justify-center bg-teal-500 bg-opacity-10 rounded-full">
-                        <svg className="w-6 h-6 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z" />
-                        </svg>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-2 mb-2">
-                      <span className="px-2 py-0.5 text-xs rounded-full bg-green-500 bg-opacity-20 text-green-500 border border-green-500 border-opacity-30">DevOps</span>
-                      <span className="px-2 py-0.5 text-xs rounded-full bg-purple-500 bg-opacity-20 text-purple-500 border border-purple-500 border-opacity-30">Practical</span>
-                    </div>
-                    <p className="text-[var(--muted)] text-sm">AWS, Azure, and cloud architecture principles</p>
-                    <div className="mt-auto"></div>
-                  </motion.div>
-
-                  <motion.div 
-                    className="bg-[var(--secondary)] p-6 rounded-lg h-[160px] flex flex-col"
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <div className="flex justify-between items-start mb-2">
-                      <h4 className="text-xl font-medium">Distributed Systems</h4>
-                      <div className="relative w-10 h-10 flex items-center justify-center bg-teal-500 bg-opacity-10 rounded-full">
-                        <svg className="w-6 h-6 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
-                        </svg>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-2 mb-2">
-                      <span className="px-2 py-0.5 text-xs rounded-full bg-blue-500 bg-opacity-20 text-blue-500 border border-blue-500 border-opacity-30">Theory</span>
-                      <span className="px-2 py-0.5 text-xs rounded-full bg-orange-500 bg-opacity-20 text-orange-500 border border-orange-500 border-opacity-30">Research</span>
-                    </div>
-                    <p className="text-[var(--muted)] text-sm">System design, scalability, and distributed computing</p>
-                    <div className="mt-auto"></div>
-                  </motion.div>
-
-                  <motion.div 
-                    className="bg-[var(--secondary)] p-6 rounded-lg h-[160px] flex flex-col"
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <div className="flex justify-between items-start mb-2">
-                      <h4 className="text-xl font-medium">Database Management</h4>
-                      <div className="relative w-10 h-10 flex items-center justify-center bg-teal-500 bg-opacity-10 rounded-full">
+                      <h4 className="text-lg font-medium pr-2">Linear Algebra</h4>
+                      <div className="relative w-10 h-10 flex-shrink-0 flex items-center justify-center bg-teal-500 bg-opacity-10 rounded-full">
                         <svg className="w-6 h-6 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4" />
                         </svg>
                       </div>
                     </div>
-                    <div className="flex items-center gap-2 mb-2">
-                      <span className="px-2 py-0.5 text-xs rounded-full bg-purple-500 bg-opacity-20 text-purple-500 border border-purple-500 border-opacity-30">Practical</span>
-                      <span className="px-2 py-0.5 text-xs rounded-full bg-green-500 bg-opacity-20 text-green-500 border border-green-500 border-opacity-30">DevOps</span>
+                    <div className="flex flex-wrap items-center gap-2 mb-2">
+                      <span className="px-2 py-0.5 text-xs rounded-full bg-blue-500 bg-opacity-20 text-blue-500 border border-blue-500 border-opacity-30">Theory</span>
+                      <span className="px-2 py-0.5 text-xs rounded-full bg-yellow-500 bg-opacity-20 text-yellow-500 border border-yellow-500 border-opacity-30">Mathematics</span>
                     </div>
-                    <p className="text-[var(--muted)] text-sm">SQL, NoSQL, and database optimization techniques</p>
+                    <p className="text-[var(--muted)] text-sm">Vectors, matrices, and eigenvalues</p>
                     <div className="mt-auto"></div>
                   </motion.div>
                 </motion.div>
@@ -2774,86 +2758,87 @@ export default function Portfolio() {
                 >
                   {/* Course cards for Current Courses */}
                   <motion.div 
-                    className="bg-[var(--secondary)] p-6 rounded-lg h-[160px] flex flex-col"
+                    className="bg-[var(--secondary)] p-6 rounded-lg h-[180px] flex flex-col border border-[var(--accent)] border-opacity-20"
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.2 }}
                   >
                     <div className="flex justify-between items-start mb-2">
-                      <h4 className="text-xl font-medium">Web Development</h4>
-                      <div className="relative w-10 h-10 flex items-center justify-center bg-teal-500 bg-opacity-10 rounded-full">
+                      <h4 className="text-lg font-medium pr-2">Software Dev</h4>
+                      <div className="relative w-10 h-10 flex-shrink-0 flex items-center justify-center bg-teal-500 bg-opacity-10 rounded-full">
                         <svg className="w-6 h-6 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
                         </svg>
                       </div>
                     </div>
-                    <div className="flex items-center gap-2 mb-2">
+                    <div className="flex flex-wrap items-center gap-2 mb-2">
                       <span className="px-2 py-0.5 text-xs rounded-full bg-purple-500 bg-opacity-20 text-purple-500 border border-purple-500 border-opacity-30">Practical</span>
-                      <span className="px-2 py-0.5 text-xs rounded-full bg-blue-500 bg-opacity-20 text-blue-500 border border-blue-500 border-opacity-30">Frontend</span>
+                      <span className="px-2 py-0.5 text-xs rounded-full bg-blue-500 bg-opacity-20 text-blue-500 border border-blue-500 border-opacity-30">Development</span>
                     </div>
-                    <p className="text-[var(--muted)] text-sm">Full-stack development with modern frameworks and tools</p>
+                    <p className="text-[var(--muted)] text-sm">Engineering practices and git</p>
                     <div className="mt-auto"></div>
                   </motion.div>
 
                   <motion.div 
-                    className="bg-[var(--secondary)] p-6 rounded-lg h-[160px] flex flex-col"
+                    className="bg-[var(--secondary)] p-6 rounded-lg h-[180px] flex flex-col border border-[var(--accent)] border-opacity-20"
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.2 }}
                   >
                     <div className="flex justify-between items-start mb-2">
-                      <h4 className="text-xl font-medium">Algorithm Design</h4>
-                      <div className="relative w-10 h-10 flex items-center justify-center bg-teal-500 bg-opacity-10 rounded-full">
+                      <h4 className="text-lg font-medium pr-2">Cybersecurity</h4>
+                      <div className="relative w-10 h-10 flex-shrink-0 flex items-center justify-center bg-teal-500 bg-opacity-10 rounded-full">
                         <svg className="w-6 h-6 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                         </svg>
                       </div>
                     </div>
-                    <div className="flex items-center gap-2 mb-2">
-                      <span className="px-2 py-0.5 text-xs rounded-full bg-blue-500 bg-opacity-20 text-blue-500 border border-blue-500 border-opacity-30">Theory</span>
-                      <span className="px-2 py-0.5 text-xs rounded-full bg-yellow-500 bg-opacity-20 text-yellow-500 border border-yellow-500 border-opacity-30">Algorithms</span>
+                    <div className="flex flex-wrap items-center gap-2 mb-2">
+                      <span className="px-2 py-0.5 text-xs rounded-full bg-red-500 bg-opacity-20 text-red-500 border border-red-500 border-opacity-30">Security</span>
+                      <span className="px-2 py-0.5 text-xs rounded-full bg-purple-500 bg-opacity-20 text-purple-500 border border-purple-500 border-opacity-30">Practical</span>
                     </div>
-                    <p className="text-[var(--muted)] text-sm">Advanced algorithms and optimization techniques</p>
+                    <p className="text-[var(--muted)] text-sm">Network security and cryptography</p>
                     <div className="mt-auto"></div>
                   </motion.div>
 
                   <motion.div 
-                    className="bg-[var(--secondary)] p-6 rounded-lg h-[160px] flex flex-col"
+                    className="bg-[var(--secondary)] p-6 rounded-lg h-[180px] flex flex-col border border-[var(--accent)] border-opacity-20"
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.2 }}
                   >
                     <div className="flex justify-between items-start mb-2">
-                      <h4 className="text-xl font-medium">Computer Networks</h4>
-                      <div className="relative w-10 h-10 flex items-center justify-center bg-teal-500 bg-opacity-10 rounded-full">
+                      <h4 className="text-lg font-medium pr-2">Prog Languages</h4>
+                      <div className="relative w-10 h-10 flex-shrink-0 flex items-center justify-center bg-teal-500 bg-opacity-10 rounded-full">
                         <svg className="w-6 h-6 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 11c0 3.517-1.009 6.799-2.753 9.571m-3.44-2.04l.054-.09A13.916 13.916 0 008 11a4 4 0 118 0c0 1.017-.07 2.019-.203 3m-2.118 6.844A21.88 21.88 0 0015.171 17m3.839 1.132c.645-2.266.99-4.659.99-7.132A8 8 0 008 4.07M3 15.364c.64-1.319 1-2.8 1-4.364 0-1.457.39-2.823 1.07-4" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                         </svg>
                       </div>
                     </div>
-                    <div className="flex items-center gap-2 mb-2">
+                    <div className="flex flex-wrap items-center gap-2 mb-2">
                       <span className="px-2 py-0.5 text-xs rounded-full bg-blue-500 bg-opacity-20 text-blue-500 border border-blue-500 border-opacity-30">Theory</span>
-                      <span className="px-2 py-0.5 text-xs rounded-full bg-green-500 bg-opacity-20 text-green-500 border border-green-500 border-opacity-30">DevOps</span>
+                      <span className="px-2 py-0.5 text-xs rounded-full bg-purple-500 bg-opacity-20 text-purple-500 border border-purple-500 border-opacity-30">Languages</span>
                     </div>
-                    <p className="text-[var(--muted)] text-sm">Network protocols, security, and distributed systems</p>
+                    <p className="text-[var(--muted)] text-sm">Language design and paradigms</p>
                     <div className="mt-auto"></div>
                   </motion.div>
 
                   <motion.div 
-                    className="bg-[var(--secondary)] p-6 rounded-lg h-[160px] flex flex-col"
+                    className="bg-[var(--secondary)] p-6 rounded-lg h-[180px] flex flex-col border border-[var(--accent)] border-opacity-20"
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.2 }}
                   >
                     <div className="flex justify-between items-start mb-2">
-                      <h4 className="text-xl font-medium">Artificial Intelligence</h4>
-                      <div className="relative w-10 h-10 flex items-center justify-center bg-teal-500 bg-opacity-10 rounded-full">
+                      <h4 className="text-lg font-medium pr-2">Probability</h4>
+                      <div className="relative w-10 h-10 flex-shrink-0 flex items-center justify-center bg-teal-500 bg-opacity-10 rounded-full">
                         <svg className="w-6 h-6 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 3.055A9.001 9.001 0 1020.945 13H11V3.055z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.488 9H15V3.512A9.025 9.025 0 0120.488 9z" />
                         </svg>
                       </div>
                     </div>
-                    <div className="flex items-center gap-2 mb-2">
+                    <div className="flex flex-wrap items-center gap-2 mb-2">
                       <span className="px-2 py-0.5 text-xs rounded-full bg-blue-500 bg-opacity-20 text-blue-500 border border-blue-500 border-opacity-30">Theory</span>
-                      <span className="px-2 py-0.5 text-xs rounded-full bg-teal-500 bg-opacity-20 text-teal-500 border border-teal-500 border-opacity-30">ML/AI</span>
+                      <span className="px-2 py-0.5 text-xs rounded-full bg-yellow-500 bg-opacity-20 text-yellow-500 border border-yellow-500 border-opacity-30">Mathematics</span>
                     </div>
-                    <p className="text-[var(--muted)] text-sm">AI Systems, natural language processing, and computer vision</p>
+                    <p className="text-[var(--muted)] text-sm">Random variables and distributions</p>
                     <div className="mt-auto"></div>
                   </motion.div>
                 </motion.div>
@@ -2870,86 +2855,86 @@ export default function Portfolio() {
                 >
                   {/* Course cards for Upcoming Courses */}
                   <motion.div 
-                    className="bg-[var(--secondary)] p-6 rounded-lg h-[160px] flex flex-col"
+                    className="bg-[var(--secondary)] p-6 rounded-lg h-[180px] flex flex-col border border-[var(--accent)] border-opacity-20"
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.2 }}
                   >
                     <div className="flex justify-between items-start mb-2">
-                      <h4 className="text-xl font-medium">Cybersecurity</h4>
-                      <div className="relative w-10 h-10 flex items-center justify-center bg-teal-500 bg-opacity-10 rounded-full">
-                        <svg className="w-6 h-6 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                        </svg>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-2 mb-2">
-                      <span className="px-2 py-0.5 text-xs rounded-full bg-red-500 bg-opacity-20 text-red-500 border border-red-500 border-opacity-30">Security</span>
-                      <span className="px-2 py-0.5 text-xs rounded-full bg-purple-500 bg-opacity-20 text-purple-500 border border-purple-500 border-opacity-30">Practical</span>
-                    </div>
-                    <p className="text-[var(--muted)] text-sm">Network security, ethical hacking, and threat analysis</p>
-                    <div className="mt-auto"></div>
-                  </motion.div>
-
-                  <motion.div 
-                    className="bg-[var(--secondary)] p-6 rounded-lg h-[160px] flex flex-col"
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <div className="flex justify-between items-start mb-2">
-                      <h4 className="text-xl font-medium">Mobile Development</h4>
-                      <div className="relative w-10 h-10 flex items-center justify-center bg-teal-500 bg-opacity-10 rounded-full">
-                        <svg className="w-6 h-6 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z" />
-                        </svg>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-2 mb-2">
-                      <span className="px-2 py-0.5 text-xs rounded-full bg-purple-500 bg-opacity-20 text-purple-500 border border-purple-500 border-opacity-30">Practical</span>
-                      <span className="px-2 py-0.5 text-xs rounded-full bg-blue-500 bg-opacity-20 text-blue-500 border border-blue-500 border-opacity-30">Frontend</span>
-                    </div>
-                    <p className="text-[var(--muted)] text-sm">iOS, Android, and cross-platform app development</p>
-                    <div className="mt-auto"></div>
-                  </motion.div>
-
-                  <motion.div 
-                    className="bg-[var(--secondary)] p-6 rounded-lg h-[160px] flex flex-col"
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <div className="flex justify-between items-start mb-2">
-                      <h4 className="text-xl font-medium">Game Development</h4>
-                      <div className="relative w-10 h-10 flex items-center justify-center bg-teal-500 bg-opacity-10 rounded-full">
-                        <svg className="w-6 h-6 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 5v2m0 4v2m0 4v2M5 5a2 2 0 00-2 2v3a2 2 0 110 4v3a2 2 0 002 2h14a2 2 0 002-2v-3a2 2 0 110-4V7a2 2 0 00-2-2H5z" />
-                        </svg>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-2 mb-2">
-                      <span className="px-2 py-0.5 text-xs rounded-full bg-purple-500 bg-opacity-20 text-purple-500 border border-purple-500 border-opacity-30">Practical</span>
-                      <span className="px-2 py-0.5 text-xs rounded-full bg-yellow-500 bg-opacity-20 text-yellow-500 border border-yellow-500 border-opacity-30">Graphics</span>
-                    </div>
-                    <p className="text-[var(--muted)] text-sm">Graphics programming, game engines, and interactive design</p>
-                    <div className="mt-auto"></div>
-                  </motion.div>
-
-                  <motion.div 
-                    className="bg-[var(--secondary)] p-6 rounded-lg h-[160px] flex flex-col"
-                    whileHover={{ scale: 1.02 }}
-                    transition={{ duration: 0.2 }}
-                  >
-                    <div className="flex justify-between items-start mb-2">
-                      <h4 className="text-xl font-medium">Blockchain Technology</h4>
-                      <div className="relative w-10 h-10 flex items-center justify-center bg-teal-500 bg-opacity-10 rounded-full">
+                      <h4 className="text-lg font-medium pr-2">Data Structures II</h4>
+                      <div className="relative w-10 h-10 flex-shrink-0 flex items-center justify-center bg-teal-500 bg-opacity-10 rounded-full">
                         <svg className="w-6 h-6 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
                         </svg>
                       </div>
                     </div>
-                    <div className="flex items-center gap-2 mb-2">
-                      <span className="px-2 py-0.5 text-xs rounded-full bg-blue-500 bg-opacity-20 text-blue-500 border border-blue-500 border-opacity-30">Theory</span>
-                      <span className="px-2 py-0.5 text-xs rounded-full bg-amber-500 bg-opacity-20 text-amber-500 border border-amber-500 border-opacity-30">Blockchain</span>
+                    <div className="flex flex-wrap items-center gap-2 mb-2">
+                      <span className="px-2 py-0.5 text-xs rounded-full bg-purple-500 bg-opacity-20 text-purple-500 border border-purple-500 border-opacity-30">Advanced</span>
+                      <span className="px-2 py-0.5 text-xs rounded-full bg-yellow-500 bg-opacity-20 text-yellow-500 border border-yellow-500 border-opacity-30">Mathematics</span>
                     </div>
-                    <p className="text-[var(--muted)] text-sm">Cryptocurrency, smart contracts, and decentralized applications</p>
+                    <p className="text-[var(--muted)] text-sm">Advanced algorithms and optimization</p>
+                    <div className="mt-auto"></div>
+                  </motion.div>
+
+                  <motion.div 
+                    className="bg-[var(--secondary)] p-6 rounded-lg h-[180px] flex flex-col border border-[var(--accent)] border-opacity-20"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <div className="flex justify-between items-start mb-2">
+                      <h4 className="text-lg font-medium pr-2">OS Advanced</h4>
+                      <div className="relative w-10 h-10 flex-shrink-0 flex items-center justify-center bg-teal-500 bg-opacity-10 rounded-full">
+                        <svg className="w-6 h-6 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="flex flex-wrap items-center gap-2 mb-2">
+                      <span className="px-2 py-0.5 text-xs rounded-full bg-purple-500 bg-opacity-20 text-purple-500 border border-purple-500 border-opacity-30">Advanced</span>
+                      <span className="px-2 py-0.5 text-xs rounded-full bg-green-500 bg-opacity-20 text-green-500 border border-green-500 border-opacity-30">Systems</span>
+                    </div>
+                    <p className="text-[var(--muted)] text-sm">Virtualization and distributed systems</p>
+                    <div className="mt-auto"></div>
+                  </motion.div>
+
+                  <motion.div 
+                    className="bg-[var(--secondary)] p-6 rounded-lg h-[180px] flex flex-col border border-[var(--accent)] border-opacity-20"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <div className="flex justify-between items-start mb-2">
+                      <h4 className="text-lg font-medium pr-2">Stochastic Processes</h4>
+                      <div className="relative w-10 h-10 flex-shrink-0 flex items-center justify-center bg-teal-500 bg-opacity-10 rounded-full">
+                        <svg className="w-6 h-6 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 17h8m0 0V9m0 8l-8-8-4 4-6-6" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="flex flex-wrap items-center gap-2 mb-2">
+                      <span className="px-2 py-0.5 text-xs rounded-full bg-blue-500 bg-opacity-20 text-blue-500 border border-blue-500 border-opacity-30">Theory</span>
+                      <span className="px-2 py-0.5 text-xs rounded-full bg-yellow-500 bg-opacity-20 text-yellow-500 border border-yellow-500 border-opacity-30">Mathematics</span>
+                    </div>
+                    <p className="text-[var(--muted)] text-sm">Markov chains and applications</p>
+                    <div className="mt-auto"></div>
+                  </motion.div>
+
+                  <motion.div 
+                    className="bg-[var(--secondary)] p-6 rounded-lg h-[180px] flex flex-col border border-[var(--accent)] border-opacity-20"
+                    whileHover={{ scale: 1.02 }}
+                    transition={{ duration: 0.2 }}
+                  >
+                    <div className="flex justify-between items-start mb-2">
+                      <h4 className="text-lg font-medium pr-2">Machine Learning</h4>
+                      <div className="relative w-10 h-10 flex-shrink-0 flex items-center justify-center bg-teal-500 bg-opacity-10 rounded-full">
+                        <svg className="w-6 h-6 text-teal-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div className="flex flex-wrap items-center gap-2 mb-2">
+                      <span className="px-2 py-0.5 text-xs rounded-full bg-blue-500 bg-opacity-20 text-blue-500 border border-blue-500 border-opacity-30">Theory</span>
+                      <span className="px-2 py-0.5 text-xs rounded-full bg-teal-500 bg-opacity-20 text-teal-500 border border-teal-500 border-opacity-30">ML/AI</span>
+                    </div>
+                    <p className="text-[var(--muted)] text-sm">Learning algorithms and neural nets</p>
                     <div className="mt-auto"></div>
                   </motion.div>
                 </motion.div>
@@ -3034,7 +3019,7 @@ export default function Portfolio() {
                 >
                   {/* Tile 1 */}
                   <motion.div 
-                    className="bg-[var(--secondary)] rounded-lg overflow-hidden"
+                    className="bg-[var(--secondary)] rounded-lg overflow-hidden border border-[var(--accent)] border-opacity-20"
                     whileHover={{ scale: 1.03 }}
                     transition={{ duration: 0.2 }}
                   >
@@ -3057,7 +3042,7 @@ export default function Portfolio() {
                   
                   {/* Tile 2 */}
                   <motion.div 
-                    className="bg-[var(--secondary)] rounded-lg overflow-hidden"
+                    className="bg-[var(--secondary)] rounded-lg overflow-hidden border border-[var(--accent)] border-opacity-20"
                     whileHover={{ scale: 1.03 }}
                     transition={{ duration: 0.2 }}
                   >
@@ -3073,14 +3058,14 @@ export default function Portfolio() {
                       </motion.div>
                     </div>
                     <div className="p-5">
-                      <h4 className="text-xl font-semibold mb-2">AI Research</h4>
+                      <h4 className="text-xl font-semibold mb-2">ML/AI Research</h4>
                       <p className="text-[var(--muted)]">Exploring machine learning models and their applications in solving real-world problems.</p>
                     </div>
                   </motion.div>
                   
                   {/* Tile 3 */}
                   <motion.div 
-                    className="bg-[var(--secondary)] rounded-lg overflow-hidden"
+                    className="bg-[var(--secondary)] rounded-lg overflow-hidden border border-[var(--accent)] border-opacity-20"
                     whileHover={{ scale: 1.03 }}
                     transition={{ duration: 0.2 }}
                   >
@@ -3092,18 +3077,18 @@ export default function Portfolio() {
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
                       >
-                        <FaGithub className="text-white w-12 h-12" />
+                        <FaMicrochip className="text-white w-12 h-12" />
                       </motion.div>
                     </div>
                     <div className="p-5">
-                      <h4 className="text-xl font-semibold mb-2">Open Source</h4>
-                      <p className="text-[var(--muted)]">Contributing to and creating projects that benefit the developer community.</p>
+                      <h4 className="text-xl font-semibold mb-2">Low Level Systems</h4>
+                      <p className="text-[var(--muted)]">Developing performant code close to hardware, including operating systems, compilers, and embedded systems.</p>
                     </div>
                   </motion.div>
                   
                   {/* Tile 4 */}
                   <motion.div 
-                    className="bg-[var(--secondary)] rounded-lg overflow-hidden"
+                    className="bg-[var(--secondary)] rounded-lg overflow-hidden border border-[var(--accent)] border-opacity-20"
                     whileHover={{ scale: 1.03 }}
                     transition={{ duration: 0.2 }}
                   >
@@ -3115,12 +3100,12 @@ export default function Portfolio() {
                         whileInView={{ opacity: 1 }}
                         viewport={{ once: true }}
                       >
-                        <FaDatabase className="text-white w-12 h-12" />
+                        <FaChartLine className="text-white w-12 h-12" />
                       </motion.div>
                     </div>
                     <div className="p-5">
-                      <h4 className="text-xl font-semibold mb-2">Data Science</h4>
-                      <p className="text-[var(--muted)]">Analyzing and visualizing data to extract meaningful insights and patterns.</p>
+                      <h4 className="text-xl font-semibold mb-2">FinTech & Quantitative Computing</h4>
+                      <p className="text-[var(--muted)]">Developing financial models, algorithmic trading strategies, and computational methods for market analysis.</p>
                     </div>
                   </motion.div>
                 </motion.div>
@@ -3137,7 +3122,7 @@ export default function Portfolio() {
                 >
                   {/* Tile 1 */}
                   <motion.div 
-                    className="bg-[var(--secondary)] rounded-lg overflow-hidden"
+                    className="bg-[var(--secondary)] rounded-lg overflow-hidden border border-[var(--accent)] border-opacity-20"
                     whileHover={{ scale: 1.03 }}
                     transition={{ duration: 0.2 }}
                   >
@@ -3160,7 +3145,7 @@ export default function Portfolio() {
                   
                   {/* Tile 2 */}
                   <motion.div 
-                    className="bg-[var(--secondary)] rounded-lg overflow-hidden"
+                    className="bg-[var(--secondary)] rounded-lg overflow-hidden border border-[var(--accent)] border-opacity-20"
                     whileHover={{ scale: 1.03 }}
                     transition={{ duration: 0.2 }}
                   >
@@ -3183,7 +3168,7 @@ export default function Portfolio() {
                   
                   {/* Tile 3 */}
                   <motion.div 
-                    className="bg-[var(--secondary)] rounded-lg overflow-hidden"
+                    className="bg-[var(--secondary)] rounded-lg overflow-hidden border border-[var(--accent)] border-opacity-20"
                     whileHover={{ scale: 1.03 }}
                     transition={{ duration: 0.2 }}
                   >
@@ -3206,7 +3191,7 @@ export default function Portfolio() {
                   
                   {/* Tile 4 */}
                   <motion.div 
-                    className="bg-[var(--secondary)] rounded-lg overflow-hidden"
+                    className="bg-[var(--secondary)] rounded-lg overflow-hidden border border-[var(--accent)] border-opacity-20"
                     whileHover={{ scale: 1.03 }}
                     transition={{ duration: 0.2 }}
                   >
@@ -3240,7 +3225,7 @@ export default function Portfolio() {
                 >
                   {/* Tile 1 */}
                   <motion.div 
-                    className="bg-[var(--secondary)] rounded-lg overflow-hidden"
+                    className="bg-[var(--secondary)] rounded-lg overflow-hidden border border-[var(--accent)] border-opacity-20"
                     whileHover={{ scale: 1.03 }}
                     transition={{ duration: 0.2 }}
                   >
@@ -3263,7 +3248,7 @@ export default function Portfolio() {
                   
                   {/* Tile 2 */}
                   <motion.div 
-                    className="bg-[var(--secondary)] rounded-lg overflow-hidden"
+                    className="bg-[var(--secondary)] rounded-lg overflow-hidden border border-[var(--accent)] border-opacity-20"
                     whileHover={{ scale: 1.03 }}
                     transition={{ duration: 0.2 }}
                   >
@@ -3286,7 +3271,7 @@ export default function Portfolio() {
                   
                   {/* Tile 3 */}
                   <motion.div 
-                    className="bg-[var(--secondary)] rounded-lg overflow-hidden"
+                    className="bg-[var(--secondary)] rounded-lg overflow-hidden border border-[var(--accent)] border-opacity-20"
                     whileHover={{ scale: 1.03 }}
                     transition={{ duration: 0.2 }}
                   >
@@ -3309,7 +3294,7 @@ export default function Portfolio() {
                   
                   {/* Tile 4 */}
                   <motion.div 
-                    className="bg-[var(--secondary)] rounded-lg overflow-hidden"
+                    className="bg-[var(--secondary)] rounded-lg overflow-hidden border border-[var(--accent)] border-opacity-20"
                     whileHover={{ scale: 1.03 }}
                     transition={{ duration: 0.2 }}
                   >
